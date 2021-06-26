@@ -51,13 +51,16 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-
+type Apikey {
+  value: String
+}
   type Query {
     me: User
     users: [User]
     user(username: String!): User
     posts(username: String): [Post]
     post(_id: ID!): Post
+    env: Apikey
   }
 
   type Mutation {

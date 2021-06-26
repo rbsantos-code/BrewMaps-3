@@ -38,7 +38,13 @@ const resolvers = {
           .populate("posts")
       );
     },
+    env: async (parent, args) => {
+      return ({
+        value: "3"
+      })
+    }
   },
+
 
   Mutation: {
     addUser: async (parent, args) => {
@@ -99,21 +105,21 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     addFavorite: async (parent, args, context) => {
-        if (context.user) {
-            const brewery = await Brewery.create({
-              ...args,
-            });
-    
-            await User.findByIdAndUpdate(
-              { _id: context.user._id },
-              { $push: { favorites: brewery } },
-              { new: true }
-            );
-    
-            return brewery;
-          }
-    
-          throw new AuthenticationError("You need to be logged in!");
+      if (context.user) {
+        const brewery = await Brewery.create({
+          ...args,
+        });
+
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { favorites: brewery } },
+          { new: true }
+        );
+
+        return brewery;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
     }
   },
 };
