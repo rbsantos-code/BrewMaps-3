@@ -10,6 +10,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 import Home from "./pages/home";
+import aboutpage from "./pages/about";
 import { StoreProvider } from "./utils/GlobalState";
 
 
@@ -42,6 +43,7 @@ function App() {
 
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={aboutpage} />
             </Switch>
           </StoreProvider>
         </div>
