@@ -36,7 +36,7 @@ const typeDefs = gql`
     longitude: String
     latitude: String
   }
-  
+
   type Brewery {
     _id: ID
     name: String!
@@ -65,6 +65,7 @@ const typeDefs = gql`
     addUser(username: String!, password: String!): Auth
     addPost(title: String!, body: String!): Post
     addComment(postId: ID!, commentBody: String!): Post
+    addFavorite(_id: ID!): Brewery
   }
 `;
 
