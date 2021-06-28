@@ -1,7 +1,7 @@
 // createContext instantiates new Context obj (container to hold gobal state data)
 // useContext Hook allows to use state created from createContext fx
 import React, { createContext, useContext } from "react";
-import { useProductReducer } from "./reducers";
+import { useBreweryReducer } from "./reducers";
 
 // create new Context obj
 const StoreContext = createContext();
@@ -14,14 +14,14 @@ const { Provider } = StoreContext;
 // ...props handles any other props the user needs
 const StoreProvider = ({ value = [], ...props }) => {
   // instantiate global state
-  // useProductReducer wraps around useReducer
+  // useBreweryReducer wraps around useReducer
   // and returns state (most up to date version of GSO)
   // and dispatch (fx to update our state)
   // dispatch looks for action obj passed in as arg
-  const [state, dispatch] = useProductReducer({
-    products: [],
-    cart: [],
-    cartOpen: false,
+  const [state, dispatch] = useBreweryReducer({
+    breweries: [],
+    favorites: [],
+    favoritesOpen: false,
     categories: [],
     currentCategory: "",
   });

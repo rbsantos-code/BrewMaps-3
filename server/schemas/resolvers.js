@@ -8,7 +8,8 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("posts");
+          .populate("posts")
+          .populate("friends");
 
         return userData;
       }
@@ -27,6 +28,7 @@ const resolvers = {
         User.find()
           // .select('-username')
           .select("-__v -password")
+          .populate("friends")
           .populate("posts")
       );
     },
@@ -35,6 +37,7 @@ const resolvers = {
         User.findOne({ username })
           // .select('-username')
           .select("-__v -password")
+          .populate("friends")
           .populate("posts")
       );
     },
@@ -45,7 +48,7 @@ const resolvers = {
       const user = await User.create(args);
       const token = signToken(user);
 
-      return { user, token };
+      return { token, user };
     },
     login: async (parent, { username, password }) => {
       const user = await User.findOne({ username });
@@ -61,7 +64,7 @@ const resolvers = {
       }
 
       const token = signToken(user);
-      // return { token, user };
+      return { token, user };
     },
     addPost: async (parent, args, context) => {
       if (context.user) {
