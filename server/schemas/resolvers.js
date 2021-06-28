@@ -61,7 +61,7 @@ const resolvers = {
       }
 
       const token = signToken(user);
-      // return { token, user };
+      return { token, user };
     },
     addPost: async (parent, args, context) => {
       if (context.user) {
