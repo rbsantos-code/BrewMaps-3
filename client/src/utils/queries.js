@@ -62,3 +62,8 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+
+// Adding queries from server side
+
+
