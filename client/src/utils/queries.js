@@ -1,37 +1,40 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const QUERY_BREWERY = gql`
-// .....change to breweries.....
-//   query getProducts($category: ID) {
-//     products(category: $category) {
-//       _id
-//       name
-//       description
-//       price
-//       quantity
-//       image
-//       category {
-//         _id
-//       }
-//     }
-//   }
+export const QUERY_POSTS = gql`
+query posts($username: String) {
+  posts(username: $username) {
+    _id
+    postText
+    createdAt
+    username
+    commentCount
+    comments {
+      _id
+      createdAt
+      username
+      commentBody
+    }
+  }
+}
 // `;
 
-export const QUERY_ALL_BREWERIES = gql`
-// .....change to breweries.....
-//   {
-//     products {
-//       _id
-//       name
-//       description
-//       price
-//       quantity
-//       category {
-//         name
-//       }
-//     }
-//   }
-// `;
+export const QUERY_POST = gql`
+  query post($id: ID!) {
+    post(_id: $id) {
+      _id
+      postText
+      createdAt
+      username
+      commentCount
+      comments {
+        _id
+        createdAt
+        username
+        commentBody
+      }
+    }
+  }
+`;
 
 export const QUERY_CATEGORIES = gql`
   {
@@ -43,27 +46,41 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 export const QUERY_USER = gql`
-  {
-    user {
-      firstName
-      lastName
-      orders {
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      friendCount
+      friends {
         _id
-        purchaseDate
-        products {
-          _id
-          name
-          description
-          price
-          quantity
-          image
+        username
+      }
+      posts {
+        _id
+        postText
+        createdAt
+        commentCount
+      }
+      favorites {
+        _id
+        name
+        address {
+          street
+          city
+          state
+          postalCode
+          country
         }
+        location {
+          latitude
+          longitude
+        }
+        phone
+        website
+        createdAt
       }
     }
   }
 `;
 
-
 // Adding queries from server side
-
-

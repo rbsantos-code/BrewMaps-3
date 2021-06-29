@@ -4,6 +4,7 @@ const typeDefs = gql`
   type User {
     _id: ID
     username: String
+    friendCount: Int
     posts: [Post]
     favorites: [Brewery]
   }
@@ -14,6 +15,7 @@ const typeDefs = gql`
     body: String
     createdAt: String
     username: String
+    commentCount: Int
     comments: [Comment]
   }
 
