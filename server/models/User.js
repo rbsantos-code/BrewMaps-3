@@ -21,6 +21,12 @@ const userSchema = new Schema(
                 ref: 'Post'
             }
         ],
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User'
+            }
+        ],
         favorites: [brewerySchema]
     },
     {

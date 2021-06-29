@@ -64,10 +64,20 @@ const typeDefs = gql`
 
   type Mutation {
     login(username: String!, password: String!): Auth
+
     addUser(username: String!, password: String!): Auth
+
     addPost(title: String!, body: String!): Post
+
     addComment(postId: ID!, commentBody: String!): Post
+<<<<<<< HEAD
     addBrewery(_id: ID!): Brewery
+=======
+
+    addFriend(friendId: ID!): User
+
+    addFavorite(_id: ID!): Brewery
+>>>>>>> 23cfe7db7bd88baaf96e834085c549cb9e6002ab
   }
 `;
 

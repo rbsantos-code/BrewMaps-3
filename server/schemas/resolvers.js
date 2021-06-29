@@ -117,7 +117,23 @@ const resolvers = {
           }
     
           throw new AuthenticationError("You need to be logged in!");
-    }
+    },
+    addFriend: async (parent, { friendId }, context) => {
+        if (context.user) {
+          const updatedUser = await User.findOneAndUpdate(
+            { _id: context.user._id },
+          //   add friendId to friend's array
+          // can't be friends wiht same person twice
+          // $addToSet instead of $push prevents duplicates
+            { $addToSet: { friends: friendId } },
+            { new: true }
+          ).populate("friends");
+  
+          return updatedUser;
+        }
+  
+        throw new AuthenticationError("You need to be logged in!");
+      },
   },
 };
 
