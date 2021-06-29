@@ -101,7 +101,7 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
-    addFavorite: async (parent, args, context) => {
+    addBrewery: async (parent, args, context) => {
         if (context.user) {
             const brewery = await Brewery.create({
               ...args,
