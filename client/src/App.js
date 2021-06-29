@@ -9,7 +9,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Home from "./pages/home";
+import Home from "./components/Home";
 import aboutpage from "./pages/about";
 import { StoreProvider } from "./utils/GlobalState";
 import Header from "./components/Header";
