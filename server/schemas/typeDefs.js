@@ -70,10 +70,8 @@ const typeDefs = gql`
     addPost(title: String!, body: String!): Post
 
     addComment(postId: ID!, commentBody: String!): Post
-
     addFriend(friendId: ID!): User
-
-    addFavorite(_id: ID!): Brewery
+    addBrewery(_id: ID!): Brewery
   }
 `;
 
