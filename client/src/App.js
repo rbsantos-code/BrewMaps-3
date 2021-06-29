@@ -9,9 +9,14 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Home from "./pages/home";
+import Home from "./components/Home";
 import aboutpage from "./pages/about";
 import { StoreProvider } from "./utils/GlobalState";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import "./App.css";
+import 'bulma/css/bulma.min.css';
 
 
 const httpLink = createHttpLink({
