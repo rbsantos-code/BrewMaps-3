@@ -15,6 +15,7 @@ import { StoreProvider } from "./utils/GlobalState";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+import Login from "./components/Login";
 import "./App.css";
 
 
@@ -49,6 +50,8 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={aboutpage} />
+              <Route exact path="/Nav" component={Nav} />
+              <Route exact path="/Login" component={Login} />
             </Switch>
           </StoreProvider>
         </div>
