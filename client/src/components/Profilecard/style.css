@@ -55,16 +55,16 @@ body {
   height: 55%;
   transform-style: preserve-3d;
 }
-.card-object.card-1 .front {
-  background: #222 url("../../images/Ian.png") 90% 35%;
+/*.card-object.card-1 .front {
+  /*background: #222 url("../../images/Ian.png") 90% 35%;
   background-size: 115%;
 }
 .card-object.card-1 .back .img-wrapper {
-  background: transparent url("../../images/Ian.png") 70% 45%;
+  /*background: transparent url("../../images/Ian.png") 70% 45%;
   background-size: 160%;
 }
 .card-object.card-1 .back .avatar {
-  background: transparent url("../../images/Ian.png") 40% 20%;
+  /*background: transparent url("../../images/Ian.png") 40% 20%;
   background-size: 130% 130%;
 }
 /* .card-object.card-2 .front {
