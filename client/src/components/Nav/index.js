@@ -18,16 +18,16 @@ export default function Nav() {
 
             <div id="navbarBasicExample" className="navbar-menu">
                 <div className="navbar-start">
-                    <a className="navbar-item">
+                    <a className="navbar-item" href="/">
                         Home
                     </a>
 
-                    <a className="navbar-item">
+                    <a className="navbar-item" href="./Social">
                         Blog
                     </a>
 
-                    <a className="navbar-item">
-                        Favorites
+                    <a className="navbar-item" href="./User">
+                        User Profile
                     </a>
 
                     <div className="navbar-item has-dropdown is-hoverable">
@@ -36,13 +36,10 @@ export default function Nav() {
                         </a>
 
                         <div className="navbar-dropdown">
-                            <a className="navbar-item">
+                            <a className="navbar-item" href="/">
                                 About
                             </a>
-                            <a className="navbar-item">
-                                Jobs
-                            </a>
-                            <a className="navbar-item">
+                            <a className="navbar-item" href="/">
                                 Contact
                             </a>
                         </div>
@@ -55,7 +52,7 @@ export default function Nav() {
                             <a className="button is-primary">
                                 <strong>Sign up</strong>
                             </a>
-                            <a className="button is-light">
+                            <a className="button is-light" href="./Login">
                                 Log in
                             </a>
                         </div>
