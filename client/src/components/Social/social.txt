@@ -18,7 +18,7 @@ export default function Social() {
                         <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
                     </p>
                 </div>
-                
+
                 <article class="media">
                     <figure class="media-left">
                         <p class="image is-48x48">
