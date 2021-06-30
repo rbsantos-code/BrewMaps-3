@@ -8,7 +8,8 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("posts");
+          .populate("posts")
+          .populate("friends");
 
         return userData;
       }
@@ -27,6 +28,7 @@ const resolvers = {
         User.find()
           // .select('-username')
           .select("-__v -password")
+          .populate("friends")
           .populate("posts")
       );
     },
@@ -35,6 +37,7 @@ const resolvers = {
         User.findOne({ username })
           // .select('-username')
           .select("-__v -password")
+          .populate("friends")
           .populate("posts")
       );
     },
@@ -45,7 +48,7 @@ const resolvers = {
       const user = await User.create(args);
       const token = signToken(user);
 
-      return { user, token };
+      return { token, user };
     },
     login: async (parent, { username, password }) => {
       const user = await User.findOne({ username });
@@ -98,20 +101,7 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
-    addFriend: async (parent, { friendId }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { friends: friendId } },
-          { new: true }
-        ).populate('friends');
-
-        return updatedUser;
-      }
-
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    addFavorite: async (parent, args, context) => {
+    addBrewery: async (parent, args, context) => {
         if (context.user) {
             const brewery = await Brewery.create({
               ...args,
@@ -127,7 +117,23 @@ const resolvers = {
           }
     
           throw new AuthenticationError("You need to be logged in!");
-    }
+    },
+    addFriend: async (parent, { friendId }, context) => {
+        if (context.user) {
+          const updatedUser = await User.findOneAndUpdate(
+            { _id: context.user._id },
+          //   add friendId to friend's array
+          // can't be friends wiht same person twice
+          // $addToSet instead of $push prevents duplicates
+            { $addToSet: { friends: friendId } },
+            { new: true }
+          ).populate("friends");
+  
+          return updatedUser;
+        }
+  
+        throw new AuthenticationError("You need to be logged in!");
+      },
   },
 };
 
