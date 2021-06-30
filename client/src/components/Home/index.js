@@ -1,11 +1,12 @@
 import React from 'react';
+import cheers from '../../public/images/cheers.png';
 
 export default function Home() {
     return (
         <div className="hero-body">
             <div className="container has-text-centered">
                 <div className="column is-full is-centered">
-                    <img src="./images/cheers.png" alt="Logo" className="images"></img>
+                    <img src={cheers} alt="Logo" className="images image is-128x128 is-inline-block"></img>
                     <h1 className="title text-light">BrewMap</h1>
                     <h2 className="subtitle text-light">Finding the brews so you can cruise.</h2>
                     <div className="box">

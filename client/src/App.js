@@ -46,7 +46,7 @@ function App() {
         <div>
           {/* All components between <StoreProvider> are children */}
           <StoreProvider>
-
+            <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={aboutpage} />
