@@ -55,6 +55,7 @@ body {
   height: 55%;
   transform-style: preserve-3d;
 }
+/*
 .card-object.card-1 .front {
   background: #222 url("../../images/Ian.png") 90% 35%;
   background-size: 115%;
