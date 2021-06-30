@@ -1,5 +1,5 @@
 import "./style.css"
-import pictureprofile from "../../images/Ian.png"
+
 
 export default function Profilecard() {
     return (
