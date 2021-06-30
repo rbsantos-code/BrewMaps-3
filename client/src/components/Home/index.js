@@ -12,11 +12,11 @@ export default function Home() {
                     <div className="box">
                         <div className="field is-grouped">
                             <p className="control is-expanded">
-                                <input className="input is-large" type="text"
+                                <input className="input is-medium" type="text"
                                 placeholder="Enter your city"></input>
                             </p>
                             <p className="control">
-                                <a className="button is-warning is-round is-large" id="searchBtn">
+                                <a className="button is-warning is-round is-medium" id="searchBtn">
                                     Search
                                 </a>
                             </p>
