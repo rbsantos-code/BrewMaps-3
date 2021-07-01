@@ -33,6 +33,8 @@ function Login(props) {
         } catch (e) {
             console.error(e);
         }
+
+    
     };
 
 
@@ -48,7 +50,8 @@ function Login(props) {
                                 <div class="field">
                                     <label for="" class="label">Username</label>
                                     <div class="control has-icons-left">
-                                        <input type="username" placeholder="e.g. johndoe" class="input" value={formState.username} onChange={handleChange} required></input>
+                                        <input type="username" 
+                                        placeholder="e.g. johndoe" className="input" name="username" value={formState.username} onChange={handleChange} required></input>
                                         <span class="icon is-small is-left">
                                             <i class="fa fa-envelope"></i>
                                         </span>
@@ -57,7 +60,7 @@ function Login(props) {
                                 <div class="field">
                                     <label for="" class="label">Password</label>
                                     <div class="control has-icons-left">
-                                        <input type="password" placeholder="*******" class="input" value={formState.password} onChange={handleChange} required></input>
+                                        <input type="password" placeholder="*******" class="input" name="password" value={formState.password} onChange={handleChange} required></input>
                                         <span class="icon is-small is-left">
                                             <i class="fa fa-lock"></i>
                                         </span>
