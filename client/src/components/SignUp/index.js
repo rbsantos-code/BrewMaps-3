@@ -7,19 +7,24 @@ export default function SignUp(props) {
 
     const [formState, setFormState] = useState({ username: '', password: ''});
 
-    const [addUser] = useMutation(ADD_USER);
+    const [addUser, { error }] = useMutation(ADD_USER);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
-        const mutationResponse = await addUser({
-            variables: {
-                username: formState.username,
-                password: formState.password,
-            },
-        });
-        const token = mutationResponse.data.addUser.token;
-        Auth.login(token);
+        try {
+            const mutationResponse = await addUser({
+                variables: {
+                    username: formState.username,
+                    password: formState.password,
+                },
+            });
+            const token = mutationResponse.data.addUser.token;
+            Auth.login(token);
+        } catch (e) {
+            console.error(e);
+        }
+        
     };
 
     const handleChange = (event) => {
@@ -61,6 +66,7 @@ export default function SignUp(props) {
                                         </p>
                                     </div>
                                 </form>
+                                {error && <div>Sign Up failed</div>}
                             </div>
                         </div>
                     </div>
