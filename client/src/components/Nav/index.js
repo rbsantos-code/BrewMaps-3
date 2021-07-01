@@ -36,7 +36,7 @@ export default function Nav() {
                         </a>
 
                         <div className="navbar-dropdown">
-                            <a className="navbar-item" href="/">
+                            <a className="navbar-item" href="./pages/about">
                                 About
                             </a>
                             <a className="navbar-item" href="/">
