@@ -24,7 +24,7 @@ export default function Home() {
                                 placeholder="Enter your city"></input>
                             </p>
                             <p className="control">
-                                <a className="button is-warning is-round is-medium" id="searchBtn">
+                                <a className="button is-warning is-round is-medium" id="searchBtn" onClick={toggleActive}>
                                     Search
                                 </a>
                             </p>
@@ -38,7 +38,7 @@ export default function Home() {
                     <div className="modal-card">
                         <header className="modal-card-head">
                             <p className="modal-card-title">BrewMap</p>
-                            <button className="delete" aria-label="close"></button>
+                            <button className="delete" aria-label="close" onClick={toggleActive}></button>
                         </header>
                         <section className="modal-card-body">
                             <div className="columns">
