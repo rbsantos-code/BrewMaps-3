@@ -9,9 +9,9 @@ export default function Login() {
                         <div class="column is-5-tablet is-4-desktop is-3-widescreen">
                             <form action="" class="box">
                                     <div class="field">
-                                        <label for="" class="label">Email</label>
+                                        <label for="" class="label">Username</label>
                                         <div class="control has-icons-left">
-                                            <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" required></input>
+                                            <input type="username" placeholder="e.g. johndoe" class="input" required></input>
                                             <span class="icon is-small is-left">
                                                 <i class="fa fa-envelope"></i>
                                             </span>
@@ -33,7 +33,7 @@ export default function Login() {
                                     </label>
                                 </div>
                                 <div class="field">
-                                    <button class="button is-success">
+                                    <button class="button is-warning">
                                     Login
                                     </button>
                                 </div>
