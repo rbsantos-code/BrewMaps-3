@@ -1,5 +1,5 @@
-let favoritePlaces = JSON.parse(localStorage.getItem("favoritePlaces"))
-let ulPlaces = $("#places")
+// let favoritePlaces = JSON.parse(localStorage.getItem("favoritePlaces"))
+// let ulPlaces = $("#places")
 // Ian's code above
 
 
