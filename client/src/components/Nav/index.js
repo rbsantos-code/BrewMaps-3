@@ -49,7 +49,7 @@ export default function Nav() {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <a className="button is-primary">
+                            <a className="button is-primary" href="./SignUp">
                                 <strong>Sign up</strong>
                             </a>
                             <a className="button is-light" href="./Login">
