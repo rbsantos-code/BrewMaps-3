@@ -1,7 +1,42 @@
 import React from 'react';
 import cheers from '../../public/images/cheers.png';
+import Auth from '../../utils/auth';
 
 export default function Nav() {
+
+    function showNavigation() {
+        if (Auth.loggedIn()) {
+            return (
+                <div className="navbar-end">
+                    <div className="navbar-item">
+                        <div className="buttons">
+                            <a className="button is-primary" href="./SignUp">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a className="button is-light" href="/" onClick={() => Auth.logout()}>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div className="navbar-end">
+                    <div className="navbar-item">
+                        <div className="buttons">
+                            <a className="button is-primary" href="./SignUp">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a className="button is-light" href="./Login">
+                                Log in
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+    }
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
@@ -46,18 +81,7 @@ export default function Nav() {
                     </div>
                 </div>
 
-                <div className="navbar-end">
-                    <div className="navbar-item">
-                        <div className="buttons">
-                            <a className="button is-primary" href="./SignUp">
-                                <strong>Sign up</strong>
-                            </a>
-                            <a className="button is-light" href="./Login">
-                                Log in
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                {showNavigation()}
             </div>
         </nav>
     )
