@@ -70,12 +70,8 @@ export default function Home() {
                         <section className="modal-card-body">
                             <div className="columns">
                                 <div className="column is-half brew-data">
-                                    {/* <label className="label" id="brewery"></label>
-                                    <label className="label" id="brewery"></label>
-                                    <label className="label" id="brewery"></label>
-                                    <label className="label" id="brewery"></label>
-                                    <label className="label" id="brewery"></label> */}
-
+                                    <h2>BREWERIES</h2>
+                                    <hr />
                                     <ul>
                                         {brewery.map(brew => <li onClick={clickHandler}
                                         data={JSON.stringify({center: {
@@ -90,14 +86,14 @@ export default function Home() {
                                     {/* <div class="map"></div> */}
                                     <BingMapsReact
                                     bingMapsKey="Ava6c7xEN-FISpqll60LNKEhdYNkr0RGC2jZoFb2l02vg2lTmQ3aLT8BFWivGKEO"
-                                    height="400px"
+                                    height="auto"
                                     mapOptions={{
                                         navigationBarMode: "square",
                                     }}
                                     width="300px"
                                     viewOptions={{
+                                        mapTypeId: "canvasLight",
                                         
-                                        mapTypeId: "canvasLight"
                                     }}
                                     pushPins={
                                         pins
