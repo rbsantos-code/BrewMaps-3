@@ -1,14 +1,15 @@
+Index.js
 import "./style.css"
+import pictureprofile from "../../public/images/Ian.png"
 
-
-export default function Profilecard() {
+export default function Profilecard(props) {
     return (
         <div className="card-wrapper">
-            <div className="card-1 card-object card-object-hf" >
+            <div className={props.profile.id} style={{ backgroundImage: `url(${props.profile.image})` }} >
                 <div className="face front">
                     <div className="title-wrapper">
-                        <div className="title">Ian</div>
-                        <div className="subtitle">The Expert Coder</div>
+                        <div className="title">{props.profile.name}</div>
+                        <div className="subtitle">{props.profile.subtitle}</div>
                     </div>
                 </div>
                 <div className="face back">
@@ -16,10 +17,10 @@ export default function Profilecard() {
                         <div className="avatar"></div>
                     </div>
                     <div className="info-wrapper">
-                        <div className="info-title">Ian</div>
+                        <div className="info-title">{props.profile.name}</div>
 
                         <ul className="info-content">
-                            <li className="info-content-item">Ian likes golf, SF sports, and pastrami sandwiches. He is an expert coder.</li>
+                            <li className="info-content-item">{props.profile.description}</li>
 
 
                         </ul>
