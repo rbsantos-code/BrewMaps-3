@@ -1,3 +1,4 @@
+Index.js
 import "./style.css"
 import pictureprofile from "../../public/images/Ian.png"
 
