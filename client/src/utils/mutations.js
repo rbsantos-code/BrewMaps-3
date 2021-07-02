@@ -39,16 +39,12 @@ export const ADD_FRIEND = gql`
 `;
 
 export const ADD_POST = gql`
-  mutation addPost($postText: String!) {
-    addPOST(postText: $postText) {
+  mutation addPost($body: String!) {
+    addPost(body: $body) {
       _id
-      postText
+      body
       createdAt
       username
-      commentCount
-      comments {
-        _id
-      }
     }
   }
 `;

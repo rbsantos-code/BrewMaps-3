@@ -4,25 +4,25 @@ export const QUERY_POSTS = gql`
 query posts($username: String) {
   posts(username: $username) {
     _id
-    postText
+    body
     createdAt
     username
     commentCount
     comments {
       _id
-      createdAt
       username
       commentBody
+      createdAt
     }
   }
 }
-// `;
+`;
 
 export const QUERY_POST = gql`
   query post($id: ID!) {
     post(_id: $id) {
       _id
-      postText
+      body
       createdAt
       username
       commentCount
@@ -79,6 +79,34 @@ export const QUERY_USER = gql`
         website
         createdAt
       }
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  {
+    me {
+      _id
+      username
+      posts {
+        body
+        createdAt
+        comments {
+          commentBody
+          username
+          createdAt
+        }
+      }
+    }
+  }
+`;
+
+
+export const QUERY_ME_BASIC = gql`
+  {
+    me {
+      _id
+      username
     }
   }
 `;

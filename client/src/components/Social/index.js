@@ -1,7 +1,14 @@
 import React from 'react';
 import cheers from '../../public/images/cheers.png';
+import PostForm from '../PostForm';
+import Auth from '../../utils/auth';
 
 export default function Social() {
+
+
+
+    const loggedIn = Auth.loggedIn();
+
     return (
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -52,12 +59,13 @@ export default function Social() {
                     </article>
                 </div>
             </article>
-            <article class="media">
+            {/* <article class="media">
                 <figure class="media-left">
                     <p class="image-is-64x64">
                         <img src="https://bulma.io/images/placeholders/128x128.png"></img>
                     </p>
                 </figure>
+                
                 <div class="media-content">
                     <div class="field">
                         <p class="control">
@@ -70,7 +78,14 @@ export default function Social() {
                         </p>
                     </div>
                 </div>
-            </article>
+            </article> */}
+            <br />
+            <div>
+                {loggedIn && (
+                    <PostForm />
+                )}
+            </div>
+
         </div>
     )
 }
