@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // ApolloProvider makes Graph API requests available to entire app
 import {
@@ -9,12 +9,23 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Home from "./pages/home";
+import Home from "./components/Home";
+import aboutpage from "./pages/about";
 import { StoreProvider } from "./utils/GlobalState";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import Login from "./components/Login";
+import "./App.css";
+import Social from "./components/Social";
+import SignUp from "./components/SignUp";
+import NoMatch from './pages/noMatch';
+import Blog from './pages/blog';
+
 
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "http://localhost:3001/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -39,9 +50,16 @@ function App() {
         <div>
           {/* All components between <StoreProvider> are children */}
           <StoreProvider>
-
+            <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={aboutpage} />
+              <Route exact path="/nav" component={Nav} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/social" component={Social} />
+              <Route exact path="/signup" component={SignUp} />
+
+              <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
         </div>

@@ -4,16 +4,17 @@ const typeDefs = gql`
   type User {
     _id: ID
     username: String
+    friendCount: Int
     posts: [Post]
     favorites: [Brewery]
   }
 
   type Post {
     _id: ID
-    title: String
     body: String
     createdAt: String
     username: String
+    commentCount: Int
     comments: [Comment]
   }
 
@@ -65,10 +66,16 @@ type Apikey {
 
   type Mutation {
     login(username: String!, password: String!): Auth
+
     addUser(username: String!, password: String!): Auth
-    addPost(title: String!, body: String!): Post
+
+    addPost(body: String!): Post
+
     addComment(postId: ID!, commentBody: String!): Post
-    addFavorite(_id: ID!): Brewery
+
+    addBrewery(_id: ID!): Brewery
+
+    addFriend(friendId: ID!): User
   }
 `;
 

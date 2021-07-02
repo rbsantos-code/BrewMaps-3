@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
-import { LOGIN } from '../utils/mutations';
+import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-function Login(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error }] = useMutation(LOGIN);
+export default function Login(props) {
+  const [formState, setFormState] = useState({ username: '', password: '' });
+  
+  const [login, { error }] = useMutation(LOGIN_USER);
 
+  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+
     try {
-      const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
+      const { mutationResponse } = await login({
+        variables: { ...formState },
       });
-      const token = mutationResponse.data.login.token;
-      Auth.login(token);
+
+      Auth.login(mutationResponse.login.token)
     } catch (e) {
       console.log(e);
     }
   };
 
+  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({
@@ -29,43 +33,55 @@ function Login(props) {
     });
   };
 
-  return (
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
+  // clear form values
+  setFormState({
+    username: '',
+    password: ''
+  });
 
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+  return (
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+              <form action="" class="box" onSubmit={handleFormSubmit}>
+                <div class="field">
+                  <label for="" class="label">Username</label>
+                  <div class="control has-icons-left">
+                    <input type="username" placeholder="e.g. johndoe" class="input" value={formState.username} onChange={handleChange} required></input>
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="" class="label">Password</label>
+                  <div class="control has-icons-left">
+                    <input type="password" placeholder="*******" class="input" value={formState.password} onChange={handleChange} required></input>
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="" class="checkbox">
+                    <input type="checkbox"></input>
+                    Remember me
+                  </label>
+                </div>
+                <div class="field">
+                  <button class="button is-warning">
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
         </div>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 }
 
-export default Login;
+
