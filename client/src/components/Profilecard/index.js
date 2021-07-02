@@ -1,4 +1,4 @@
-Index.js
+import React from 'react';
 import "./style.css"
 import pictureprofile from "../../public/images/Ian.png"
 
