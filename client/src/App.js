@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // ApolloProvider makes Graph API requests available to entire app
 import {
@@ -17,11 +17,14 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import "./App.css";
+import Social from "./components/Social";
+import SignUp from "./components/SignUp";
+import NoMatch from './pages/noMatch';
 
 
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "http://localhost:3001/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -52,6 +55,10 @@ function App() {
               <Route exact path="/about" component={aboutpage} />
               <Route exact path="/Nav" component={Nav} />
               <Route exact path="/Login" component={Login} />
+              <Route exact path="/Social" component={Social} />
+              <Route exact path="/SignUp" component={SignUp} />
+
+              <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
         </div>

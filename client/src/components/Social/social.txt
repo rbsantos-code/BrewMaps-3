@@ -11,14 +11,14 @@ export default function Social() {
             <div class="media-content">
                 <div class="content">
                     <p>
+                        <br>
+                        <br />
                         <strong>Barbara Middleton</strong>
-                        <br>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
-                        <br>
                         <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
                     </p>
                 </div>
-
+                
                 <article class="media">
                     <figure class="media-left">
                         <p class="image is-48x48">
@@ -46,7 +46,7 @@ export default function Social() {
                 <article class="media">
                 <figure class="media-left">
                     <p class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png"></img>
+                        <img src="https://bulma.io/images/placeholders/96x96.png"></img>
                     </p>
                 </figure>
                 <div class="media-content">

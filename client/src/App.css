@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+#modalBox {
+  position: absolute;
+  top: 45%;
+  left: 22%;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
