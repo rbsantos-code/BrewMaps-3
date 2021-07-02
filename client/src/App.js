@@ -21,6 +21,7 @@ import Social from "./components/Social";
 import SignUp from "./components/SignUp";
 import NoMatch from './pages/noMatch';
 import Blog from './pages/blog';
+import User from './components/User';
 
 
 
@@ -58,7 +59,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/social" component={Social} />
               <Route exact path="/signup" component={SignUp} />
-
+              <Route exact path="/user" component={User} />
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
