@@ -74,7 +74,7 @@ export default function Nav() {
                             <a className="navbar-item" href="./about">
                                 About
                             </a>
-                            <a className="navbar-item" href="/">
+                            <a className="navbar-item" href="./Contact">
                                 Contact
                             </a>
                         </div>
