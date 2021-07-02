@@ -25,7 +25,7 @@ const profiles = [
         "description": "",
         "github": "",
         "email": "",
-        "image": "../../public/images/Rich.png",
+        "image": "../../public/images/Rich.jpg",
         "id": "card-3 card-object card-object-hf"
     },
     {
