@@ -43,7 +43,7 @@ const profiles = [
         "description": "",
         "github": "",
         "email": "",
-        "image": "../../public/images/Ian.png",
+        "image": "../../public/images/Jennifer.png",
         "id": "card-5 card-object card-object-hf"
     }
 ]
