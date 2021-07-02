@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cheers from '../../public/images/cheers.png';
+import BingMapsReact from 'bingmaps-react';
 
 export default function Home() {
 
     const [activeModal, SetActiveModal] = useState(false);
 
+    const [brewery, setBrewery] = useState([]);
+
+    const [pins, setPins] = useState([]);
+
+    const [city, setCity] = useState('');
+
     const toggleActive = () => {
         SetActiveModal(!activeModal);
     };
+
+    const clickHandler = (event) => {
+        const mapData = event.target.getAttribute("data");
+        console.log(JSON.parse(mapData));
+        setPins([...pins, JSON.parse(mapData)])
+    }
+
+    const submitHandler = () => {
+        fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
+        .then(response => response.json())
+        .then(data => setBrewery(data))
+        .then(() => toggleActive())
+    };
+
+
 
     return (
         <>
@@ -20,11 +42,14 @@ export default function Home() {
                     <div className="box">
                         <div className="field is-grouped">
                             <p className="control is-expanded">
-                                <input className="input is-medium" type="text"
-                                placeholder="Enter your city"></input>
+                                <input 
+                                className="input is-medium" type="text"
+                                placeholder="Enter your city"
+                                onChange={(e) => setCity(e.target.value)}
+                                ></input>
                             </p>
                             <p className="control">
-                                <a className="button is-warning is-round is-medium" id="searchBtn" onClick={toggleActive}>
+                                <a className="button is-warning is-round is-medium" id="searchBtn" onClick={submitHandler}>
                                     Search
                                 </a>
                             </p>
@@ -33,6 +58,8 @@ export default function Home() {
                   </div>
                 </div>
             </div>
+
+
             <div className={activeModal ? "is-active" : "modal"} id="modalBox">
                 <div className="modal-background">
                     <div className="modal-card">
@@ -43,14 +70,41 @@ export default function Home() {
                         <section className="modal-card-body">
                             <div className="columns">
                                 <div className="column is-half brew-data">
+                                    {/* <label className="label" id="brewery"></label>
                                     <label className="label" id="brewery"></label>
                                     <label className="label" id="brewery"></label>
                                     <label className="label" id="brewery"></label>
-                                    <label className="label" id="brewery"></label>
-                                    <label className="label" id="brewery"></label>
+                                    <label className="label" id="brewery"></label> */}
+
+                                    <ul>
+                                        {brewery.map(brew => <li onClick={clickHandler}
+                                        data={JSON.stringify({center: {
+                                            latitude: brew.latitude,
+                                            longitude: brew.longitude
+                                        }})}
+                                        
+                                        > - {brew.name}</li>)}
+                                    </ul>
                                 </div>
                                 <div className="column auto">
-                                    <div class="map"></div>
+                                    {/* <div class="map"></div> */}
+                                    <BingMapsReact
+                                    bingMapsKey="Ava6c7xEN-FISpqll60LNKEhdYNkr0RGC2jZoFb2l02vg2lTmQ3aLT8BFWivGKEO"
+                                    height="400px"
+                                    mapOptions={{
+                                        navigationBarMode: "square",
+                                    }}
+                                    width="300px"
+                                    viewOptions={{
+                                        
+                                        mapTypeId: "canvasLight"
+                                    }}
+                                    pushPins={
+                                        pins
+                                    }
+                    
+                                    />
+
                                 </div>
                             </div>
                         </section>
