@@ -11,7 +11,6 @@ const typeDefs = gql`
 
   type Post {
     _id: ID
-    title: String
     body: String
     createdAt: String
     username: String
@@ -67,7 +66,7 @@ const typeDefs = gql`
 
     addUser(username: String!, password: String!): Auth
 
-    addPost(title: String!, body: String!): Post
+    addPost(body: String!): Post
 
     addComment(postId: ID!, commentBody: String!): Post
 

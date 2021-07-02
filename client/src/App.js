@@ -54,10 +54,10 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={aboutpage} />
-              <Route exact path="/Nav" component={Nav} />
-              <Route exact path="/Login" component={Login} />
-              <Route exact path="/Social" component={Blog} />
-              <Route exact path="/SignUp" component={SignUp} />
+              <Route exact path="/nav" component={Nav} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/social" component={Social} />
+              <Route exact path="/signup" component={SignUp} />
 
               <Route component={NoMatch} />
             </Switch>
