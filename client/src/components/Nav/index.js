@@ -71,7 +71,7 @@ export default function Nav() {
                         </a>
 
                         <div className="navbar-dropdown">
-                            <a className="navbar-item" href="./pages/about">
+                            <a className="navbar-item" href="./about">
                                 About
                             </a>
                             <a className="navbar-item" href="/">
