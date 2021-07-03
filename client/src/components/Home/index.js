@@ -41,6 +41,7 @@ export default function Home() {
         window.location.reload();
     }
 
+
     
 
     // const latitude = brewery.map(data => data.latitude);
