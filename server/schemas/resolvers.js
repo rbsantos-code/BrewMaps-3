@@ -107,25 +107,6 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
-<<<<<<< HEAD
-    addFavorite: async (parent, args, context) => {
-      if (context.user) {
-        const brewery = await Brewery.create({
-          ...args,
-        });
-
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { favorites: brewery } },
-          { new: true }
-        );
-
-        return brewery;
-      }
-
-      throw new AuthenticationError("You need to be logged in!");
-    }
-=======
     addBrewery: async (parent, args, context) => {
         if (context.user) {
             const brewery = await Brewery.create({
@@ -159,7 +140,6 @@ const resolvers = {
   
         throw new AuthenticationError("You need to be logged in!");
       },
->>>>>>> 7a8ffc61bf658ac8516c06f10d882593b60af2f5
   },
 };
 
