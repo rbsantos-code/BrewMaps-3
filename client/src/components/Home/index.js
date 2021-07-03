@@ -112,6 +112,7 @@ export default function Home() {
                                     }}
                                     width="300px"
                                     viewOptions={{
+                                
                                         mapTypeId: "canvasLight"
                                     }}
                                     pushPins={
