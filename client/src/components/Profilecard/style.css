@@ -124,6 +124,7 @@ body {
           animation: flip-2-hor-top-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
 }
 .card-object.flip-in.card-2,
+.card-object.flip-in.card-5,
 .card-object.flip-in.card-4{
   -webkit-animation: flip-2-hor-bottom-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
           animation: flip-2-hor-bottom-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
@@ -133,6 +134,7 @@ body {
   animation: flip-2-hor-top-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) reverse both;
 }
 .card-object.flip-out.card-2,
+.card-object.flip-out.card-5,
 .card-object.flip-out.card-4 {
   animation: flip-2-hor-bottom-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) reverse both;
 }

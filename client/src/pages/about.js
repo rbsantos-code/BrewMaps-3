@@ -52,7 +52,7 @@ export default function aboutpage() {
     return (
         <div>
             {profiles.map(profile => (
-                <Profilecard profile={profile} />
+                <Profilecard profile={profile} key={profile.name} />
             ))}
         </div>
     )
