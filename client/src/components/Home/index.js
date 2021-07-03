@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import cheers from '../../public/images/cheers.png';
 import BingMapsReact from 'bingmaps-react';
+import BrewFont from '../../public/images/brewFont.png';
 
 export default function Home() {
 
@@ -12,6 +13,11 @@ export default function Home() {
 
     const [city, setCity] = useState('');
 
+    const [longitude, setlongitude] = useState('');
+    const [latitude, setlatitude] = useState('');
+
+
+
     const toggleActive = () => {
         SetActiveModal(!activeModal);
     };
@@ -22,12 +28,26 @@ export default function Home() {
         setPins([...pins, JSON.parse(mapData)])
     }
 
+    console.log('pins', pins);
+
     const submitHandler = () => {
         fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
         .then(response => response.json())
         .then(data => setBrewery(data))
         .then(() => toggleActive())
     };
+
+    const refreshPage = () => {
+        window.location.reload();
+    }
+
+    
+
+    // const latitude = brewery.map(data => data.latitude);
+    // const longitude = brewery.map(data => data.longitude);
+
+    // console.log(latitude);
+
 
 
 
@@ -63,16 +83,16 @@ export default function Home() {
             <div className={activeModal ? "is-active" : "modal"} id="modalBox">
                 <div className="modal-background">
                     <div className="modal-card">
-                        <header className="modal-card-head">
+                        <header className="modal-card-head has-background-primary">
                             <p className="modal-card-title">BrewMap</p>
                             <button className="delete" aria-label="close" onClick={toggleActive}></button>
                         </header>
                         <section className="modal-card-body">
                             <div className="columns">
                                 <div className="column is-half brew-data">
-                                    <h2>BREWERIES</h2>
+                                    <img src={BrewFont}/>
                                     <hr />
-                                    <ul>
+                                    <ul className="has-text-weight-bold is-family-monospace has-text-link">
                                         {brewery.map(brew => <li onClick={clickHandler}
                                         data={JSON.stringify({center: {
                                             latitude: brew.latitude,
@@ -88,24 +108,23 @@ export default function Home() {
                                     bingMapsKey="Ava6c7xEN-FISpqll60LNKEhdYNkr0RGC2jZoFb2l02vg2lTmQ3aLT8BFWivGKEO"
                                     height="auto"
                                     mapOptions={{
-                                        navigationBarMode: "square",
+                                        navigationBarMode: "square"
                                     }}
                                     width="300px"
                                     viewOptions={{
-                                        mapTypeId: "canvasLight",
-                                        
+                                        mapTypeId: "canvasLight"
                                     }}
                                     pushPins={
-                                        pins
+                                        pins                      
                                     }
-                    
                                     />
 
                                 </div>
                             </div>
                         </section>
-                        <footer className="modal-card-foot">
-                            <button className="button is success" id="close" onClick={toggleActive}>Close</button>
+                        <footer className="modal-card-foot has-background-info">
+                        <button className="button is-info is-light is-fullwidth" id="refresh" onClick={refreshPage}>Clear</button>
+                            <button className="button is-info is-light is-fullwidth" id="close" onClick={toggleActive}>Close</button>
                         </footer>
                     </div>
                 </div>
