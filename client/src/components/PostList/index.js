@@ -8,7 +8,7 @@ const PostList = ({ posts }) => {
 
     return (
         <>
-           <article className="column">
+           <article className="column box has-background-info-light">
            {posts && 
                 posts.map(posts => (
                 <article className="media">
@@ -28,7 +28,7 @@ const PostList = ({ posts }) => {
                                     {posts.body}
                                 </Link>
                                 <br />
-                                <small><a>Like</a> . <a>Reply</a> . 3hrs</small>
+                                <small><a>Like</a> . <a>Reply</a> {posts.createdAt}</small>
                             </p>
                         </div>
                     </div>
