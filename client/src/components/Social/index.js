@@ -5,6 +5,7 @@ import { QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
 import cheers from '../../public/images/cheers.png';
 import PostList from '../PostList';
 import PostForm from '../PostForm';
+
 import Auth from '../../utils/auth';
 
 export default function Social() {
@@ -37,10 +38,9 @@ export default function Social() {
                 )}
                 
                 
-                {/* <div class="media-content">
-                   
+                <div class="media-content">
 
-                    <article class="media">
+                    {/* <article class="media">
                         <figure class="media-left">
                             <p class="image is-48x48">
                                 <img src="https://bulma.io/images/placeholders/128x128.png"></img>
@@ -57,8 +57,8 @@ export default function Social() {
                                 </p>
                             </div>
                         </div>
-                    </article>
-                </div> */}
+                    </article> */}
+                </div>
             </article>
             <hr />
             <div>

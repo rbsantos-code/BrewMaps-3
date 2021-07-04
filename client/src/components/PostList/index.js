@@ -1,10 +1,13 @@
+import { useQuery } from '@apollo/client';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentList from '../CommentList';
 
 const PostList = ({ posts }) => {
     if (!posts.length) {
         return <h2>No post yet! Be the first to do so!</h2>
     }
+
 
     return (
         <>
@@ -31,6 +34,7 @@ const PostList = ({ posts }) => {
                                 <small><a>Like</a> . <a>Reply</a> {posts.createdAt}</small>
                             </p>
                         </div>
+                        <CommentList comments={posts.comments}/>
                     </div>
                 </article>
             ))}

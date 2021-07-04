@@ -44,6 +44,7 @@ export const ADD_POST = gql`
       _id
       body
       createdAt
+      commentCount
       username
     }
   }
