@@ -31,15 +31,16 @@ export default function Home() {
 
     console.log('pins', pins);
 
+
     const submitHandler = () => {
         fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
         .then(response => response.json())
-        .then(data => {
+        .then((data => {
             setBrewery(data)
             console.log(data)
             setlongitude(data[0].longitude)
             setlatitude(data[0].latitude)  
-        })
+        }))
         .then(() => toggleActive())
     };
 
