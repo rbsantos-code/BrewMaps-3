@@ -21,10 +21,10 @@ const profiles = [
     },
     {
         "name": "Rich",
-        "subtitle": "Expert Coder",
-        "description": "",
-        "github": "",
-        "email": "",
+        "subtitle": "The Brew Master",
+        "description": "Enjoy learning and very passionate about technology. Love to eat good food and travel.",
+        "github": "https://rbsantos-code.github.io/all-about-me/",
+        "email": "mailto:richardbriansantos91@yahoo.com",
         "image": "../../public/images/Rich.jpg",
         "id": "card-3 card-object card-object-hf"
     },
