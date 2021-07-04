@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentList from '../CommentList';
 
 const PostList = ({ posts }) => {
     if (!posts.length) {
@@ -28,9 +29,10 @@ const PostList = ({ posts }) => {
                                     {posts.body}
                                 </Link>
                                 <br />
-                                <small><a>Like</a> . <a>Reply</a> {posts.createdAt}</small>
+                                <small><a>Like</a> . <Link to={`/post/${posts._id}`}><a>Reply</a></Link> {posts.createdAt}</small>
                             </p>
                         </div>
+                        <CommentList comments={posts.comments}/>
                     </div>
                 </article>
             ))}
