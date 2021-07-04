@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import cheers from '../../public/images/cheers.png';
 import BingMapsReact from 'bingmaps-react';
 import BrewFont from '../../public/images/brewFont.png';
@@ -13,9 +14,9 @@ export default function Home() {
 
     const [city, setCity] = useState('');
 
-    const [longitude, setlongitude] = useState({});
-    const [latitude, setlatitude] = useState('');
+    const [longitude, setlongitude] = useState(-122.2281897);
 
+    const [latitude, setlatitude] = useState(37.7761111);
 
 
     const toggleActive = () => {
@@ -33,34 +34,19 @@ export default function Home() {
     const submitHandler = () => {
         fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
         .then(response => response.json())
-        .then(data => setBrewery(data))
+        .then(data => {
+            setBrewery(data)
+            console.log(data)
+            setlongitude(data[0].longitude)
+            setlatitude(data[0].latitude)  
+        })
         .then(() => toggleActive())
     };
 
     const refreshPage = () => {
         window.location.reload();
     }
-
-
-    // practice api data below - 
-
-    const getLon = () => {
-        fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
-        .then(response => response.json())
-        .then(location => setlongitude(location))
-    }
-
-    const loc = brewery.map(location => location.longitude);
-    console.log(loc);
     
-
-    const lat = brewery.map(data => data.longitude);
-    const lon = brewery.map(data => data.longitude);
-
-    console.log(lat, lon);
-
-
-
 
     return (
         <>
@@ -123,7 +109,7 @@ export default function Home() {
                                     }}
                                     width="300px"
                                     viewOptions={{
-                                        center: { longitude: -122.2281897, latitude: 37.7761111 },
+                                        center: { longitude: longitude, latitude: latitude },
                                         mapTypeId: "canvasLight"
                                     }}
                                     pushPinsWithInfoboxes={
