@@ -36,29 +36,6 @@ export default function Social() {
                 ) : (
                     <PostList posts={posts}/>
                 )}
-                
-                
-                <div class="media-content">
-
-                    {/* <article class="media">
-                        <figure class="media-left">
-                            <p class="image is-48x48">
-                                <img src="https://bulma.io/images/placeholders/128x128.png"></img>
-                            </p>
-                        </figure>
-                        <div class="media-content">
-                            <div class="content">
-                                <p>
-                                    <strong>Jane Smith</strong> <br /> <small>@janesmith</small> <small>15m</small>
-                                    <br />
-                                    Ooo I love it there!
-                                    <br />
-                                    <small><a>Like</a> . <a>Reply</a> . 3hrs</small>
-                                </p>
-                            </div>
-                        </div>
-                    </article> */}
-                </div>
             </article>
             <hr />
             <div>

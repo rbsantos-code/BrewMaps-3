@@ -43,7 +43,7 @@ const CommentForm = ({ postId }) => {
                 <div class="field">
                     <p class="control">
                         <textarea
-                            class="textarea"
+                            class="textarea is-info is-small"
                             placeholder="Add a comment..."
                             value={commentBody}
                             onChange={handleChange}></textarea>
@@ -53,10 +53,12 @@ const CommentForm = ({ postId }) => {
                     <p class="control">
                         <button
                             class="button"
-                            type="submit" onClick={refreshPage}>Post Comment</button>
+                            type="submit" >Post Comment</button>
                     </p>
                 </div>
             </form>
         </div>
     )
 }
+
+export default CommentForm;

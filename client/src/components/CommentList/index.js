@@ -1,22 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import CommentForm from '../CommentForm';
+import Auth from '../../utils/auth';
+import { useQuery } from '@apollo/client';
+import { QUERY_POST } from '../../utils/queries';
 
 
 const CommentList = ({ comments }) => {
 
-    // retrun comment section
+    const { id: postId } = useParams();
+
+    const { loading, data } = useQuery(QUERY_POST, {
+        variables: { id: postId}
+    });
+
+    const post = data?.post || {};
+
+    if (loading) {
+        return <div>Something is brewing!</div>;
+    }
+    
     return (
         <>
             {comments &&
                 comments.map(comment => (
-                    <article class="media" key={comment._id}>
-                        <figure class="media-left">
-                            <p class="image is-48x48">
+                    <article className="media" key={comment._id}>
+                        <figure className="media-left">
+                            <p className="image is-48x48">
                                 <img src="https://bulma.io/images/placeholders/128x128.png"></img>
                             </p>
                         </figure>
-                        <div class="media-content">
-                            <div class="content">
+                        <div className="media-content">
+                            <div className="content">
                                 <p>
                                     <strong>@{comment.username}</strong> 
                                     <br />
@@ -26,7 +41,9 @@ const CommentList = ({ comments }) => {
                                     <small><a>Like</a> . <a>Reply</a> {comment.createdAt}</small>
                                 </p>
                             </div>
+                            
                         </div>
+
                     </article>
                 ))}
 

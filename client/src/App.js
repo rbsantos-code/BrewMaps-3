@@ -23,6 +23,7 @@ import NoMatch from './pages/noMatch';
 import Blog from './pages/blog';
 import User from './components/User';
 import Contact from './components/Contact';
+import SinglePost from './components/SinglePost';
 
 
 
@@ -62,6 +63,7 @@ function App() {
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/user" component={User} />
               <Route exact path="/contact" component={Contact} />
+              <Route exact path="/post/:id" component={SinglePost} />
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
