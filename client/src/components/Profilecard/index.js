@@ -90,8 +90,8 @@ export default function Profilecard(props) {
                         <div className="subtitle">{props.profile.subtitle}</div>
                     </div>
                 </div>
-                <div className="face back" onClick={flipCard}>
-                    <div className="img-wrapper">
+                <div className="face back" >
+                    <div className="img-wrapper" onClick={flipCard}>
                         <div className="avatar"></div>
                     </div>
                     <div className="info-wrapper">
@@ -103,16 +103,13 @@ export default function Profilecard(props) {
 
                         </ul>
 
-                        {/* <a className="info-content" href={props.profile.github}>Professional Portfolio</a>
-                        // <a className="info-content" href={props.profile.email}>Send Email</a> */}
+                        <a className="info-content" href={props.profile.github} target="_blank" >Professional Profile</a>
+                        <a className="info-content" href={props.profile.email}>Send Email</a>
                     </div>
                 </div>
-
             </div>
-            <a className="info-content" href={props.profile.github}>Professional Portfolio</a>
-            <a className="info-content" href={props.profile.email}>Send Email</a>
-        </div>
 
+        </div>
 
     )
 }

@@ -65,7 +65,7 @@ body {
 }
 .card-object.card-1 .back .img-wrapper {
   background: transparent url("../../public/images/Ian.png") 70% 45%;
-  background-size: 160%;
+  background-size: 70%;
 }
 .card-object.card-1 .back .avatar {
   background: transparent url("../../public/images/Ian.png") 40% 20%;
@@ -77,7 +77,7 @@ body {
 }
 .card-object.card-2 .back .img-wrapper {
   background: transparent url("../../public/images/Tela.jpg") 70% 50%;
-  background-size: 140%;
+  background-size: 77%;
 }
 .card-object.card-2 .back .avatar {
   background: transparent url("../../public/images/Tela.jpg") 50% 50% no-repeat;
@@ -86,7 +86,7 @@ body {
 
 .card-object.card-3 .front {
   background: #222 url("../../public/images/Rich.jpg") 80% 100% no-repeat;
-  background-size: 108%;
+  background-size: 140%;
 }
 .card-object.card-3 .back .img-wrapper {
   background: transparent url("../../public/images/Rich.jpg") 90% 40% no-repeat;
@@ -99,7 +99,7 @@ body {
 
 .card-object.card-4 .front {
   background: #222 url("../../public/images/Felicia Harris Foster.jpg") 80% 100% no-repeat;
-  background-size: 108%;
+  background-size: 125%;
 }
 .card-object.card-4 .back .img-wrapper {
   background: transparent url("../../public/images/Felicia Harris Foster.jpg") 90% 40% no-repeat;
@@ -208,7 +208,7 @@ body {
   font-family: 'Archivo Black', sans-serif;
   width: 100%;
   text-transform: uppercase;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   line-height: 1;
   opacity: 0.8;
   transition: opacity 0.2s ease;
@@ -226,7 +226,7 @@ body {
 }
 .face.front .title-wrapper .subtitle {
   color:#fff;
-  font-size: 0.9vw;
+  font-size: 0.7vw;
   line-height: 1;
   letter-spacing: 1px;
   text-transform: uppercase;

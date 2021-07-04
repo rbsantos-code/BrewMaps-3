@@ -50,23 +50,21 @@ const profiles = [
         "id": "card-5 card-object card-object-hf"
     }
 ]
-
 export default function aboutpage() {
     return (
         <div>
             <div class="hero-body">
   <div class="container has-text-centered">
-    
-    <div id="video-box">
-      <iframe height="300" id="video" src="https://www.youtube.com/embed/qbP2XCGyWRY" frameborder="0"
-        allow="autoplay; encrypted-media" allowfullscreen>
+        <div id="video-box">
+      <iframe height="300" widith="600" id="video" src="https://www.youtube.com/embed/qbP2XCGyWRY" frameborder="0"
+        allow="autoplay; encrypted-media" allowfullscreen> <br/>
       </iframe>
     </div>
     <div id="image-group">
       <img src="https://www.dropbox.com/s/z59bms55wbkfdo7/barrels.jpg?raw=1" alt=""/>
-
+      
       <img src="https://www.dropbox.com/s/hqlfizn8yc5xaa0/beer-taps.jpg?raw=1" alt=""/>
-
+      <br/>
       {/* <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt=""/> */}
 
     </div>
