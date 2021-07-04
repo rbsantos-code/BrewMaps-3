@@ -30,6 +30,10 @@ const PostForm = () => {
         }
     });
 
+    const refreshPage = () => {
+        window.location.reload();
+    }
+
     const handleChange = event => {
         if (event.target.value.length <= 200) {
             setText(event.target.value);
@@ -81,7 +85,7 @@ const PostForm = () => {
                         <p class="control">
                             <button 
                             class="button" 
-                            type="submit">Post comment</button>
+                            type="submit" onClick={refreshPage}>Post comment</button>
                         </p>
                     </div>
                 </form>

@@ -13,7 +13,7 @@ export default function Home() {
 
     const [city, setCity] = useState('');
 
-    const [longitude, setlongitude] = useState('');
+    const [longitude, setlongitude] = useState({});
     const [latitude, setlatitude] = useState('');
 
 
@@ -42,12 +42,22 @@ export default function Home() {
     }
 
 
+    // practice api data below - 
+
+    const getLon = () => {
+        fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
+        .then(response => response.json())
+        .then(location => setlongitude(location))
+    }
+
+    const loc = brewery.map(location => location.longitude);
+    console.log(loc);
     
 
-    // const latitude = brewery.map(data => data.latitude);
-    // const longitude = brewery.map(data => data.longitude);
+    const lat = brewery.map(data => data.longitude);
+    const lon = brewery.map(data => data.longitude);
 
-    // console.log(latitude);
+    console.log(lat, lon);
 
 
 
@@ -113,10 +123,10 @@ export default function Home() {
                                     }}
                                     width="300px"
                                     viewOptions={{
-                                
+                                        center: { longitude: -122.2281897, latitude: 37.7761111 },
                                         mapTypeId: "canvasLight"
                                     }}
-                                    pushPins={
+                                    pushPinsWithInfoboxes={
                                         pins                      
                                     }
                                     />

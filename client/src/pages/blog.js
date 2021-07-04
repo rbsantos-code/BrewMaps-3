@@ -9,13 +9,13 @@ import Auth from '../utils/auth';
 const Blog = () => {
 
     const { loading, data } = useQuery(QUERY_POSTS);
-
     const posts = data?.posts || {};
     console.log(posts);
 
 
     return (
         <>
+            
             {loading ? (
                 <div>Loading..One Sec!</div>
             ) : (
