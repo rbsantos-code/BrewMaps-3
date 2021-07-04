@@ -4,6 +4,10 @@
   height: 200px;
 }
 
+.img-wrapper, .info-title {
+  pointer-events: none;
+}
+
 .around{
     justify-content: space-around;
 }
@@ -39,7 +43,7 @@ body {
   float: left;
   position: relative;
   margin: 0;
-  width: 25%;
+  width: 20%;
   height: 0;
   padding: 0 0 28%;
   perspective: 700px;

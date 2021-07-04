@@ -54,6 +54,27 @@ const profiles = [
 export default function aboutpage() {
     return (
         <div>
+            <div class="hero-body">
+  <div class="container has-text-centered">
+    
+    <div id="video-box">
+      <iframe height="300" id="video" src="https://www.youtube.com/embed/qbP2XCGyWRY" frameborder="0"
+        allow="autoplay; encrypted-media" allowfullscreen>
+      </iframe>
+    </div>
+    <div id="image-group">
+      <img src="https://www.dropbox.com/s/z59bms55wbkfdo7/barrels.jpg?raw=1" alt=""/>
+
+      <img src="https://www.dropbox.com/s/hqlfizn8yc5xaa0/beer-taps.jpg?raw=1" alt=""/>
+
+      {/* <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt=""/> */}
+
+    </div>
+
+
+  </div>
+</div>
+            {/* <img src={beerImage} alt="beer"/> */}
             {profiles.map(profile => (
                 <Profilecard profile={profile} key={profile.name} />
             ))}
