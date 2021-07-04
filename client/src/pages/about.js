@@ -31,18 +31,18 @@ const profiles = [
     {
         "name": "Felicia",
         "subtitle": "The Professor",
-        "description": "",
-        "github": "",
-        "email": "",
+        "description": "Instructional Designer/Education Consultant.Lifelong learner and passion for developing elearning courses.",
+        "github": "https://harrisfd.github.io/portfolio-page/",
+        "email": "mailto:fharrisfoster@gmail.com",
         "image": "../../public/images/Felicia Harris Foster.jpg",
         "id": "card-4 card-object card-object-hf"
     },
     {
         "name": "Jennifer",
         "subtitle": "Expert Coder",
-        "description": "",
-        "github": "",
-        "email": "",
+        "description": "Junior developer with a background in health sciences, eager to contribute at the intersection of medicine and technology",
+        "github": "https://github.com/njthanhtrang",
+        "email": "mailto:njthanhtrang@gmail.com",
         "image": "../../public/images/Jennifer.png",
         "id": "card-5 card-object card-object-hf"
     }
