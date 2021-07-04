@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 
 const CommentList = ({ comments }) => {
+
+    // retrun comment section
     return (
         <>
             {comments &&
