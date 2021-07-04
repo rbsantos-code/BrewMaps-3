@@ -44,12 +44,12 @@ const profiles = [
         "name": "Jennifer",
         "subtitle": "Expert Coder",
         "description": "Junior developer with a background in health sciences, eager to contribute at the intersection of medicine and technology",
-        "github": "https://github.com/njthanhtrang",
+        "github": "https://njthanhtrang.github.io/2.-Advanced-CSS-Challenge-Professional-Portfolio/ ",
         "email": "mailto:njthanhtrang@gmail.com",
         "image": "../../public/images/Jennifer.png",
         "id": "card-5 card-object card-object-hf"
     },
-    
+
 ]
 export default function aboutpage() {
     return (
@@ -66,15 +66,15 @@ export default function aboutpage() {
 
                         <img src="https://www.dropbox.com/s/hqlfizn8yc5xaa0/beer-taps.jpg?raw=1" alt="" />
 
-                        <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt=""/>
-                        <img src={beerImage} alt="beer"/>
+                        <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt="" />
+                        <img src={beerImage} alt="beer" />
                         <br />
                     </div>
 
 
                 </div>
             </div>
-            
+
             {profiles.map(profile => (
                 <Profilecard profile={profile} key={profile.name} />
             ))}
