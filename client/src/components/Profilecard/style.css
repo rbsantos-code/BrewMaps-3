@@ -4,6 +4,10 @@
   height: 200px;
 }
 
+.img-wrapper, .info-title {
+  pointer-events: none;
+}
+
 .around{
     justify-content: space-around;
 }
@@ -14,6 +18,7 @@
   src: url(https://fonts.gstatic.com/s/archivoblack/v10/HTxqL289NzCGg4MzN6KJ7eW6CYyF-w.ttf) format('truetype');
 }
 body {
+  
   font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #cfcfcf;
   background: linear-gradient(45deg, rgba(22, 167, 175, 0.6) 5%, rgba(23, 27, 158, 0.7) 55%, rgba(68, 9, 82, 0.5) 100%) no-repeat;
@@ -39,7 +44,7 @@ body {
   float: left;
   position: relative;
   margin: 0;
-  width: 25%;
+  width: 20%;
   height: 0;
   padding: 0 0 28%;
   perspective: 700px;
@@ -61,7 +66,7 @@ body {
 }
 .card-object.card-1 .back .img-wrapper {
   background: transparent url("../../public/images/Ian.png") 70% 45%;
-  background-size: 160%;
+  background-size: 70%;
 }
 .card-object.card-1 .back .avatar {
   background: transparent url("../../public/images/Ian.png") 40% 20%;
@@ -73,7 +78,7 @@ body {
 }
 .card-object.card-2 .back .img-wrapper {
   background: transparent url("../../public/images/Tela.jpg") 70% 50%;
-  background-size: 140%;
+  background-size: 77%;
 }
 .card-object.card-2 .back .avatar {
   background: transparent url("../../public/images/Tela.jpg") 50% 50% no-repeat;
@@ -82,7 +87,7 @@ body {
 
 .card-object.card-3 .front {
   background: #222 url("../../public/images/Rich.jpg") 80% 100% no-repeat;
-  background-size: 108%;
+  background-size: 140%;
 }
 .card-object.card-3 .back .img-wrapper {
   background: transparent url("../../public/images/Rich.jpg") 90% 40% no-repeat;
@@ -95,7 +100,7 @@ body {
 
 .card-object.card-4 .front {
   background: #222 url("../../public/images/Felicia Harris Foster.jpg") 80% 100% no-repeat;
-  background-size: 108%;
+  background-size: 125%;
 }
 .card-object.card-4 .back .img-wrapper {
   background: transparent url("../../public/images/Felicia Harris Foster.jpg") 90% 40% no-repeat;
@@ -104,13 +109,27 @@ body {
 .card-object.card-4 .back .avatar {
   background: #fff url("../../public/images/Felicia Harris Foster.jpg") 0 50% no-repeat;
   background-size: 120% 120%;
-} */
+} 
+
+.card-object.card-5 .front {
+  background: #222 url("../../public/images/Jennifer.png") 80% 100% no-repeat;
+  background-size: 108%;
+}
+.card-object.card-5 .back .img-wrapper {
+  background: transparent url("../../public/images/Jennifer.png") 90% 40% no-repeat;
+  background-size: 115%;
+}
+.card-object.card-5 .back .avatar {
+  background: #fff url("../../public/images/Jennifer.png") 0 50% no-repeat;
+  background-size: 120% 120%;
+} 
 .card-object.flip-in.card-1,
 .card-object.flip-in.card-3 {
   -webkit-animation: flip-2-hor-top-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
           animation: flip-2-hor-top-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
 }
 .card-object.flip-in.card-2,
+.card-object.flip-in.card-5,
 .card-object.flip-in.card-4{
   -webkit-animation: flip-2-hor-bottom-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
           animation: flip-2-hor-bottom-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
@@ -120,6 +139,7 @@ body {
   animation: flip-2-hor-top-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) reverse both;
 }
 .card-object.flip-out.card-2,
+.card-object.flip-out.card-5,
 .card-object.flip-out.card-4 {
   animation: flip-2-hor-bottom-fwd 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) reverse both;
 }
@@ -189,7 +209,7 @@ body {
   font-family: 'Archivo Black', sans-serif;
   width: 100%;
   text-transform: uppercase;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   line-height: 1;
   opacity: 0.8;
   transition: opacity 0.2s ease;
@@ -207,7 +227,7 @@ body {
 }
 .face.front .title-wrapper .subtitle {
   color:#fff;
-  font-size: 0.9vw;
+  font-size: 0.7vw;
   line-height: 1;
   letter-spacing: 1px;
   text-transform: uppercase;
