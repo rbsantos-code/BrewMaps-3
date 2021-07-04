@@ -1,12 +1,25 @@
 import React, { useEffect } from 'react';
 import "./style.css"
 import pictureprofile from "../../public/images/Ian.png"
+import beer from "../../public/images/cheers.png";
+
+function BeerPhoto () {
+    return (
+        <div>
+            <img
+            src={beer}
+            alt="Cheers"
+            />
+        </div>
+    )
+}
+
+
+
 
 export default function Profilecard(props) {
 
     useEffect(() => {
-
-
 
         var faceButtons = document.querySelectorAll('.face');
 
@@ -25,6 +38,8 @@ export default function Profilecard(props) {
                 closeCards(card);
                 openCard(card);
             }
+
+            
 
         }
 
@@ -78,7 +93,7 @@ export default function Profilecard(props) {
 
                         </ul>
 
-                        <a className="info-content" href="https://riosborne6.github.io/Portfolio/">Ian's Professional Portfolio</a>
+                        <a className="info-content" href="https://riosborne6.github.io/Portfolio/">Professional Portfolio</a>
                         <a className="info-content" href="mailto:riosborne6@gmail.com">Send Email</a>
                     </div>
                 </div>

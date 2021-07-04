@@ -1,4 +1,7 @@
 import Profilecard from "../components/Profilecard";
+// import beerImage from '../public/images/Beer Image.jpg';
+// export {beerImage};   
+
 
 const profiles = [
     {
