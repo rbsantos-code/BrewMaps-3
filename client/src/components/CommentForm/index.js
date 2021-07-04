@@ -13,7 +13,7 @@ const CommentForm = ({ postId }) => {
 
     const handleChange = event => {
         if (event.target.value.length <= 150) {
-            setBody(event.target.length);
+            setBody(event.target.value);
             setCharacterCount(event.target.value.length);
         }
     };
@@ -46,7 +46,8 @@ const CommentForm = ({ postId }) => {
                             class="textarea is-info is-small"
                             placeholder="Add a comment..."
                             value={commentBody}
-                            onChange={handleChange}></textarea>
+                            onChange={handleChange}
+                        ></textarea>
                     </p>
                 </div>
                 <div class="field">

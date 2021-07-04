@@ -39,7 +39,7 @@ const SinglePost = props => {
                             <br />
                             {posts.body}
                             <br />
-                            <small><a>Like</a>{posts.createdAt}</small>
+                            <small><a>Like</a> . {posts.createdAt}</small>
                         </p>
                     </div>
                     <div className="content">
