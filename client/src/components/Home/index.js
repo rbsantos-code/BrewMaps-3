@@ -32,6 +32,7 @@ export default function Home() {
 
 
     const submitHandler = () => {
+        console.log('city', city)
         fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
         .then(response => response.json())
         .then((data => {
@@ -44,7 +45,7 @@ export default function Home() {
         .catch((error) => {
             console.log(error);
             window.location.reload();
-            alert('No Breweries found, try another search');
+            alert('Brewery info not available, try another search!');
         })
     };
 
