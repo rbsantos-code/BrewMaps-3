@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import cheers from '../../public/images/cheers.png';
 import BingMapsReact from 'bingmaps-react';
 import BrewFont from '../../public/images/brewFont.png';
@@ -42,6 +41,11 @@ export default function Home() {
             setlatitude(data[0].latitude)  
         }))
         .then(() => toggleActive())
+        .catch((error) => {
+            console.log(error);
+            window.location.reload();
+            alert('No Breweries found, try another search');
+        })
     };
 
     const refreshPage = () => {
@@ -63,7 +67,7 @@ export default function Home() {
                                 <input 
                                 className="input is-medium" type="text"
                                 placeholder="Enter your city"
-                                onChange={(e) => setCity(e.target.value)}
+                                onChange={(e) => setCity(e.target.value.split("").join(""))}
                                 ></input>
                             </p>
                             <p className="control">
