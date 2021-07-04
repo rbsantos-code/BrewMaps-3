@@ -12,10 +12,10 @@ const profiles = [
     },
     {
         "name": "Tela",
-        "subtitle": "The Educator",
-        "description": "",
-        "github": "",
-        "email": "",
+        "subtitle": "The Awesome Educator",
+        "description": "HIGH SCHOOL SCIENCE TEACHER & CONTENT LEAD. Passionate about digital tools to redefine education.",
+        "github": "https://telacaul.github.io/caul-professional-portfolio/",
+        "email": "mailto:telacaul@gmail.com",
         "image": "../../public/images/Tela.png",
         "id": "card-2 card-object card-object-hf"
     },
