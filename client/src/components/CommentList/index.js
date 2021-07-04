@@ -38,7 +38,7 @@ const CommentList = ({ comments }) => {
                                     {comment.commentBody}
                                     <Link to={`/profile/${comment.username}`}></Link>
                                     <br />
-                                    <small><a>Like</a> . <a>Reply</a> {comment.createdAt}</small>
+                                    <small><a>Like</a> . {comment.createdAt}</small>
                                 </p>
                             </div>
                             
