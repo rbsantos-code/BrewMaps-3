@@ -14,9 +14,9 @@ export default function Home() {
 
     const [city, setCity] = useState('');
 
-    const [longitude, setlongitude] = useState(-122.2281897);
+    const [longitude, setlongitude] = useState(0);
 
-    const [latitude, setlatitude] = useState(37.7761111);
+    const [latitude, setlatitude] = useState(0);
 
 
     const toggleActive = () => {
@@ -46,7 +46,7 @@ export default function Home() {
     const refreshPage = () => {
         window.location.reload();
     }
-    
+
 
     return (
         <>
