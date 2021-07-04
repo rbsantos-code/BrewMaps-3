@@ -18,6 +18,7 @@
   src: url(https://fonts.gstatic.com/s/archivoblack/v10/HTxqL289NzCGg4MzN6KJ7eW6CYyF-w.ttf) format('truetype');
 }
 body {
+  
   font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #cfcfcf;
   background: linear-gradient(45deg, rgba(22, 167, 175, 0.6) 5%, rgba(23, 27, 158, 0.7) 55%, rgba(68, 9, 82, 0.5) 100%) no-repeat;
@@ -108,7 +109,7 @@ body {
 .card-object.card-4 .back .avatar {
   background: #fff url("../../public/images/Felicia Harris Foster.jpg") 0 50% no-repeat;
   background-size: 120% 120%;
-} */
+} 
 
 .card-object.card-5 .front {
   background: #222 url("../../public/images/Jennifer.png") 80% 100% no-repeat;

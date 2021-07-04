@@ -1,5 +1,5 @@
 import Profilecard from "../components/Profilecard";
-// import beerImage from '../public/images/Beer Image.jpg';
+import beerImage from '../public/images/Beer Image.jpg';
 // export {beerImage};   
 
 
@@ -26,7 +26,7 @@ const profiles = [
         "name": "Rich",
         "subtitle": "The Brew Master",
         "description": "Enjoy learning and very passionate about technology. Love to eat good food and travel.",
-        "github": "https://rbsantos-code.github.io/all-about-me/",
+        "github": "https://rbsantos-code.github.io/new-portfolio/",
         "email": "mailto:richardbriansantos91@yahoo.com",
         "image": "../../public/images/Rich.jpg",
         "id": "card-3 card-object card-object-hf"
@@ -48,31 +48,33 @@ const profiles = [
         "email": "mailto:njthanhtrang@gmail.com",
         "image": "../../public/images/Jennifer.png",
         "id": "card-5 card-object card-object-hf"
-    }
+    },
+    
 ]
 export default function aboutpage() {
     return (
         <div>
             <div class="hero-body">
-  <div class="container has-text-centered">
-        <div id="video-box">
-      <iframe height="300" widith="600" id="video" src="https://www.youtube.com/embed/qbP2XCGyWRY" frameborder="0"
-        allow="autoplay; encrypted-media" allowfullscreen> <br/>
-      </iframe>
-    </div>
-    <div id="image-group">
-      <img src="https://www.dropbox.com/s/z59bms55wbkfdo7/barrels.jpg?raw=1" alt=""/>
-      
-      <img src="https://www.dropbox.com/s/hqlfizn8yc5xaa0/beer-taps.jpg?raw=1" alt=""/>
-      <br/>
-      {/* <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt=""/> */}
+                <div class="container has-text-centered">
+                    <div id="video-box">
+                        <iframe width="1460" height="400" src="https://www.youtube.com/embed/qbP2XCGyWRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <br />
+                    </div>
+                    <div id="image-group">
 
-    </div>
+                        <img src="https://www.dropbox.com/s/z59bms55wbkfdo7/barrels.jpg?raw=1" alt="" />
+
+                        <img src="https://www.dropbox.com/s/hqlfizn8yc5xaa0/beer-taps.jpg?raw=1" alt="" />
+
+                        <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt=""/>
+                        <img src={beerImage} alt="beer"/>
+                        <br />
+                    </div>
 
 
-  </div>
-</div>
-            {/* <img src={beerImage} alt="beer"/> */}
+                </div>
+            </div>
+            
             {profiles.map(profile => (
                 <Profilecard profile={profile} key={profile.name} />
             ))}
