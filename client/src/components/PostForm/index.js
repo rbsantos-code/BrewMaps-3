@@ -6,7 +6,7 @@ import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 
 const PostForm = () => {
 
-    const [body, setText] = useState('');
+    const [body, setText] = useState('');  
 
     const [characterCount, setCharacterCount] = useState(0);
 
@@ -85,7 +85,7 @@ const PostForm = () => {
                         <p class="control">
                             <button 
                             class="button" 
-                            type="submit" onClick={refreshPage}>Post comment</button>
+                            type="submit" onClick={refreshPage}>Send Post</button>
                         </p>
                     </div>
                 </form>
