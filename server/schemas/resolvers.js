@@ -41,7 +41,13 @@ const resolvers = {
           .populate("posts")
       );
     },
+    env: async (parent, args) => {
+      return ({
+        value: "3"
+      })
+    }
   },
+
 
   Mutation: {
     addUser: async (parent, args) => {
