@@ -1,49 +1,12 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
 const brewerySchema = new Schema(
   {
-    name: {
+    id: {
       type: String,
-      required: true,
-    },
-    address: {
-      street: {
-        type: String,
-      },
-      city: {
-        type: String,
-      },
-      state: {
-        type: String,
-      },
-      postalCode: {
-        type: String,
-      },
-      country: {
-        type: String,
-      },
-    },
-    location: {
-      latitude: {
-        type: String,
-      },
-      longitude: {
-        type: String,
-      },
-    },
-    phone: {
-      type: String,
-    },
-    website: {
-      type: String,
-    },
-
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
-    },
+      required: true
+    }
   },
   {
     toJSON: {
@@ -52,4 +15,6 @@ const brewerySchema = new Schema(
   }
 );
 
-module.exports = brewerySchema;
+const Brewery = model('Brewery', brewerySchema);
+
+module.exports = Brewery;

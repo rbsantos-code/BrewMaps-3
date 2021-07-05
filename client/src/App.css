@@ -44,6 +44,16 @@
   }
 }
 
+/* favorite star */
+
+input[type="radio"] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
 footer {
   position: absolute;
   bottom: 0;
