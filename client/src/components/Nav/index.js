@@ -57,11 +57,11 @@ export default function Nav() {
                         Home
                     </a>
 
-                    <a className="navbar-item" href="./Social">
+                    <a className="navbar-item" href="/Social">
                         Blog
                     </a>
 
-                    <a className="navbar-item" href="./User">
+                    <a className="navbar-item" href="/User">
                         User Profile
                     </a>
 
