@@ -65,24 +65,9 @@ export const ADD_COMMENT = gql`
 `;
 
 export const ADD_BREWERY = gql`
-  mutation addBrewery($breweryName: String!) {
-    addBrewery(breweryName: $breweryName) {
+  mutation addBrewery($id: ID!) {
+    addBrewery(id: $id) {
         _id
-        name
-        address {
-          street
-          city
-          state
-          postalCode
-          country
-        }
-        location {
-          latitude
-          longitude
-        }
-        phone
-        website
-        createdAt
     }
   }
 `;

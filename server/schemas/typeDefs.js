@@ -40,12 +40,6 @@ const typeDefs = gql`
 
   type Brewery {
     _id: ID
-    name: String!
-    address: Address
-    location: Location
-    phone: String
-    website: String
-    createdAt: String
   }
 
   type Auth {

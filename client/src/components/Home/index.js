@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import cheers from '../../public/images/cheers.png';
 import BingMapsReact from 'bingmaps-react';
 import BrewFont from '../../public/images/brewFont.png';
+import { ADD_BREWERY } from '../../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 export default function Home() {
 
@@ -16,6 +18,8 @@ export default function Home() {
     const [longitude, setlongitude] = useState(0);
 
     const [latitude, setlatitude] = useState(0);
+
+    const [addBrewery, { error }] = useMutation(ADD_BREWERY);
 
 
     const toggleActive = () => {
@@ -50,6 +54,13 @@ export default function Home() {
 
     const refreshPage = () => {
         window.location.reload();
+    }
+
+    const saveHandler = async (event) => {
+        const id = event.target;
+        const { data } = await addBrewery({ id: id });
+        console.log(data);
+        console.log(id);
     }
 
 
@@ -95,15 +106,18 @@ export default function Home() {
                                     <img src={BrewFont} />
                                     <hr />
                                     <ul className="has-text-weight-bold is-family-monospace has-text-link">
-                                        {brewery.map(brew => <li onClick={clickHandler}
-                                            data={JSON.stringify({
-                                                center: {
-                                                    latitude: brew.latitude,
-                                                    longitude: brew.longitude
-                                                }
-                                            })}
-
-                                        > - {brew.name}</li>)}
+                                        <div>
+                                            {brewery.map(brew => <li onClick={clickHandler}
+                                                data={JSON.stringify({
+                                                    center: {
+                                                        latitude: brew.latitude,
+                                                        longitude: brew.longitude
+                                                    }
+                                                })}
+                                            > - {brew.name}
+                                            <br />
+                                            <button data={brew.id} onClick={() => {saveHandler(brew.id)}}>starbutton</button></li>)}
+                                        </div>
                                     </ul>
                                 </div>
                                 <div className="column auto">
