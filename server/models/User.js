@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
-const brewerySchema = require("./Brewery");
+var mongoose = require("mongoose");
+const brewery = require("./Brewery");
+const brewerySchema = mongoose.model("Brewery").schema;
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(

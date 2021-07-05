@@ -106,7 +106,7 @@ const resolvers = {
             const brewery = await Brewery.create({
               ...args,
             });
-    
+            console.log(brewery);
             await User.findByIdAndUpdate(
               { _id: context.user._id },
               { $push: { favorites: brewery } },

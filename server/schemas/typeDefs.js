@@ -39,13 +39,7 @@ const typeDefs = gql`
   }
 
   type Brewery {
-    _id: ID
-    name: String!
-    address: Address
-    location: Location
-    phone: String
-    website: String
-    createdAt: String
+    id: ID
   }
 
   type Auth {
@@ -70,7 +64,7 @@ const typeDefs = gql`
 
     addComment(postId: ID!, commentBody: String!): Post
 
-    addBrewery(_id: ID!): Brewery
+    addBrewery(id: ID!): Brewery
 
     addFriend(friendId: ID!): User
   }

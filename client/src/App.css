@@ -43,3 +43,14 @@
     transform: rotate(360deg);
   }
 }
+
+/* favorite star */
+
+input[type="radio"] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
