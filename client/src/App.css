@@ -44,8 +44,23 @@
   }
 }
 
+<<<<<<< HEAD
 .footerBottom {
   position: fixed;
+=======
+/* favorite star */
+
+input[type="radio"] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
+footer {
+  position: absolute;
+>>>>>>> 43d9ff4f65fb59d8ca468ec41759e8d4fc582271
   bottom: 0;
   width: 100%;
   height: 1px;

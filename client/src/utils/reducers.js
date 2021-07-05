@@ -42,6 +42,7 @@ export const reducer = (state, action) => {
         favoritesOpen: true,
         // add action.breweries to end of array
         cart: [...state.cart, action.breweries],
+        // starButton: !state.buttonClicked
       };
 
     case REMOVE_FROM_FAVORITES:

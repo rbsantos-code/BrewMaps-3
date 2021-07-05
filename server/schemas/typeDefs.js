@@ -39,7 +39,11 @@ const typeDefs = gql`
   }
 
   type Brewery {
+<<<<<<< HEAD
     _id: ID
+=======
+    id: ID
+>>>>>>> 43d9ff4f65fb59d8ca468ec41759e8d4fc582271
   }
 
   type Auth {
@@ -67,7 +71,7 @@ type Apikey {
 
     addComment(postId: ID!, commentBody: String!): Post
 
-    addBrewery(_id: ID!): Brewery
+    addBrewery(id: ID!): Brewery
 
     addFriend(friendId: ID!): User
   }

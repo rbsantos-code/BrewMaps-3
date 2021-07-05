@@ -67,7 +67,11 @@ export const ADD_COMMENT = gql`
 export const ADD_BREWERY = gql`
   mutation addBrewery($id: ID!) {
     addBrewery(id: $id) {
+<<<<<<< HEAD
         _id
+=======
+        id
+>>>>>>> 43d9ff4f65fb59d8ca468ec41759e8d4fc582271
     }
   }
 `;
