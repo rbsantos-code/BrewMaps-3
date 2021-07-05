@@ -66,6 +66,7 @@ function App() {
               <Route exact path="/post/:id" component={SinglePost} />
               <Route component={NoMatch} />
             </Switch>
+            <Footer/>
           </StoreProvider>
         </div>
       </Router>
