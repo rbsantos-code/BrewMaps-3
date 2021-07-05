@@ -54,6 +54,7 @@ export default function Home() {
     const id = e.target.getAttribute("data");
     const { data } = await addBrewery({ id: id });
     console.log(data);
+    console.log(id);
   };
 
   return (
