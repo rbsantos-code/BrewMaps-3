@@ -6,7 +6,7 @@ import beerImage from '../public/images/Beer Image.jpg';
 const profiles = [
     {
         "name": "Ian",
-        "subtitle": "Expert Coder",
+        "subtitle": "Resident Expert Coder",
         "description": "Ian likes golf, SF sports, and pastrami sandwiches. He is an expert coder.",
         "github": "https://riosborne6.github.io/Portfolio/",
         "email": "mailto:riosborne6@gmail.com",
@@ -42,7 +42,7 @@ const profiles = [
     },
     {
         "name": "Jennifer",
-        "subtitle": "Expert Coder",
+        "subtitle": "Back-End Expert Coder",
         "description": "Junior developer with a background in health sciences, eager to contribute at the intersection of medicine and technology",
         "github": "https://njthanhtrang.github.io/2.-Advanced-CSS-Challenge-Professional-Portfolio/ ",
         "email": "mailto:njthanhtrang@gmail.com",

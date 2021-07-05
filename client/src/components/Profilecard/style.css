@@ -62,7 +62,7 @@ body {
 }
  .card-object.card-1 .front {
   background: #222 url("../../public/images/Ian.png") 90% 35%;
-  background-size: 115%;
+  background-size: 140%;
 }
 .card-object.card-1 .back .img-wrapper {
   background: transparent url("../../public/images/Ian.png") 70% 45%;
@@ -113,7 +113,7 @@ body {
 
 .card-object.card-5 .front {
   background: #222 url("../../public/images/Jennifer.png") 80% 100% no-repeat;
-  background-size: 108%;
+  background-size: 170%;
 }
 .card-object.card-5 .back .img-wrapper {
   background: transparent url("../../public/images/Jennifer.png") 90% 40% no-repeat;
@@ -191,8 +191,8 @@ body {
 .face.front .title-wrapper {
   position: absolute;
   bottom: 3%;
-  left: 25%;
-  right: 25%;
+  left: 15%;
+  right: 15%;
   overflow: hidden;
   display: flex;
   justify-content: center;
