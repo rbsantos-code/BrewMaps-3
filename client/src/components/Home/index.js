@@ -67,7 +67,7 @@ export default function Home() {
                                     <input
                                         className="input is-medium" type="text"
                                         placeholder="Enter your city"
-                                        onChange={(e) => setCity(e.target.value)}
+                                        onChange={(e) => setCity(e.target.value.split('').join(''))}
                                     ></input>
                                 </p>
                                 <p className="control">
