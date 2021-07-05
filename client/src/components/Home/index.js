@@ -32,21 +32,20 @@ export default function Home() {
 
 
     const submitHandler = () => {
-        console.log('city', city)
         fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
-        .then(response => response.json())
-        .then((data => {
-            setBrewery(data)
-            console.log(data)
-            setlongitude(data[0].longitude)
-            setlatitude(data[0].latitude)  
-        }))
-        .then(() => toggleActive())
-        .catch((error) => {
-            console.log(error);
-            window.location.reload();
-            alert('Brewery info not available, try another search!');
-        })
+            .then(response => response.json())
+            .then((data => {
+                setBrewery(data)
+                console.log(data)
+                setlongitude(data[0].longitude)
+                setlatitude(data[0].latitude)
+            }))
+            .then(() => toggleActive())
+            .catch((error) => {
+                console.log(error);
+                window.location.reload();
+                alert('Brewery info not available, try another search!');
+            })
     };
 
     const refreshPage = () => {
@@ -56,29 +55,29 @@ export default function Home() {
 
     return (
         <>
-          <div className="hero-body">
-            <div className="container has-text-centered">
-                <div className="column is-full is-centered">
-                    <img src={cheers} alt="Logo" className="images image is-128x128 is-inline-block"></img>
-                    <h1 className="title text-light">BrewMap</h1>
-                    <h2 className="subtitle text-light">Finding the brews so you can cruise.</h2>
-                    <div className="box">
-                        <div className="field is-grouped">
-                            <p className="control is-expanded">
-                                <input 
-                                className="input is-medium" type="text"
-                                placeholder="Enter your city"
-                                onChange={(e) => setCity(e.target.value.split("").join(""))}
-                                ></input>
-                            </p>
-                            <p className="control">
-                                <a className="button is-warning is-round is-medium" id="searchBtn" onClick={submitHandler}>
-                                    Search
-                                </a>
-                            </p>
+            <div className="hero-body">
+                <div className="container has-text-centered">
+                    <div className="column is-full is-centered">
+                        <img src={cheers} alt="Logo" className="images image is-128x128 is-inline-block"></img>
+                        <h1 className="title text-light">BrewMap</h1>
+                        <h2 className="subtitle text-light">Finding the brews so you can cruise.</h2>
+                        <div className="box">
+                            <div className="field is-grouped">
+                                <p className="control is-expanded">
+                                    <input
+                                        className="input is-medium" type="text"
+                                        placeholder="Enter your city"
+                                        onChange={(e) => setCity(e.target.value)}
+                                    ></input>
+                                </p>
+                                <p className="control">
+                                    <a className="button is-warning is-round is-medium" id="searchBtn" onClick={submitHandler}>
+                                        Search
+                                    </a>
+                                </p>
+                            </div>
                         </div>
-                    </div>     
-                  </div>
+                    </div>
                 </div>
             </div>
 
@@ -93,42 +92,43 @@ export default function Home() {
                         <section className="modal-card-body">
                             <div className="columns">
                                 <div className="column is-half brew-data">
-                                    <img src={BrewFont}/>
+                                    <img src={BrewFont} />
                                     <hr />
                                     <ul className="has-text-weight-bold is-family-monospace has-text-link">
-                                        {brewery.map(brew => 
-                                        <li onClick={clickHandler}
-                                        data={JSON.stringify({center: {
-                                            latitude: brew.latitude,
-                                            longitude: brew.longitude
-                                        }})}
-                                        
+                                        {brewery.map(brew => <li onClick={clickHandler}
+                                            data={JSON.stringify({
+                                                center: {
+                                                    latitude: brew.latitude,
+                                                    longitude: brew.longitude
+                                                }
+                                            })}
+
                                         > - {brew.name}</li>)}
                                     </ul>
                                 </div>
                                 <div className="column auto">
                                     {/* <div class="map"></div> */}
                                     <BingMapsReact
-                                    bingMapsKey="Ava6c7xEN-FISpqll60LNKEhdYNkr0RGC2jZoFb2l02vg2lTmQ3aLT8BFWivGKEO"
-                                    height="auto"
-                                    mapOptions={{
-                                        navigationBarMode: "square"
-                                    }}
-                                    width="300px"
-                                    viewOptions={{
-                                        center: { longitude: longitude, latitude: latitude },
-                                        mapTypeId: "canvasLight"
-                                    }}
-                                    pushPinsWithInfoboxes={
-                                        pins                      
-                                    }
+                                        bingMapsKey="Ava6c7xEN-FISpqll60LNKEhdYNkr0RGC2jZoFb2l02vg2lTmQ3aLT8BFWivGKEO"
+                                        height="auto"
+                                        mapOptions={{
+                                            navigationBarMode: "square"
+                                        }}
+                                        width="300px"
+                                        viewOptions={{
+                                            center: { longitude: longitude, latitude: latitude },
+                                            mapTypeId: "canvasLight"
+                                        }}
+                                        pushPinsWithInfoboxes={
+                                            pins
+                                        }
                                     />
 
                                 </div>
                             </div>
                         </section>
                         <footer className="modal-card-foot has-background-info">
-                        <button className="button is-info is-light is-fullwidth" id="refresh" onClick={refreshPage}>Clear</button>
+                            <button className="button is-info is-light is-fullwidth" id="refresh" onClick={refreshPage}>Clear</button>
                             <button className="button is-info is-light is-fullwidth" id="close" onClick={toggleActive}>Close</button>
                         </footer>
                     </div>
@@ -143,3 +143,5 @@ export default function Home() {
         </>
     )
 }
+
+
