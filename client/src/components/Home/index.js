@@ -96,7 +96,8 @@ export default function Home() {
                                     <img src={BrewFont}/>
                                     <hr />
                                     <ul className="has-text-weight-bold is-family-monospace has-text-link">
-                                        {brewery.map(brew => <li onClick={clickHandler}
+                                        {brewery.map(brew => 
+                                        <li onClick={clickHandler}
                                         data={JSON.stringify({center: {
                                             latitude: brew.latitude,
                                             longitude: brew.longitude
