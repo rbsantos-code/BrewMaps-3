@@ -7,7 +7,7 @@ const profiles = [
     {
         "name": "Ian",
         "subtitle": "Resident Expert Coder",
-        "description": "Ian likes golf, SF sports, and pastrami sandwiches. He is an expert coder.",
+        "description": "Ian likes golf, SF sports, and pastrami sandwiches. He is an expert coder.   ",
         "github": "https://riosborne6.github.io/Portfolio/",
         "email": "mailto:riosborne6@gmail.com",
         "image": "../../public/images/Ian.png",
@@ -57,25 +57,27 @@ export default function aboutpage() {
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <div id="video-box">
-                        <iframe width="1460" height="400" src="https://www.youtube.com/embed/qbP2XCGyWRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="1340" height="400" src="https://www.youtube.com/embed/qbP2XCGyWRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <br />
                         <br />
                     </div>
                     <div id="image-group">
-                        <div class="flex-parent">
+                        <div class="flex-parent flex-start">
 
 
-                            <div class="flex-child">
+                            <div class="flex-child one">
                                 <img src="https://www.dropbox.com/s/z59bms55wbkfdo7/barrels.jpg?raw=1" alt="" />
                             </div>
                             
-                            <div class="flex-child">
+                            <div class="flex-child two">
                                 <img src="https://www.dropbox.com/s/hqlfizn8yc5xaa0/beer-taps.jpg?raw=1" alt="" />
                             </div>
-                            <div class="flex-child">
+                            <div class="flex-child three">
                             <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt="" />
                             </div>
-                            
+                            <div class="flex-justify flex-end">
                             <img src={beerImage} alt="beer" />
+                            </div>
                             <br />
                         </div>
                     </div>
