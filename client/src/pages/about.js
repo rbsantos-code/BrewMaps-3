@@ -61,14 +61,23 @@ export default function aboutpage() {
                         <br />
                     </div>
                     <div id="image-group">
+                        <div class="flex-parent">
 
-                        <img src="https://www.dropbox.com/s/z59bms55wbkfdo7/barrels.jpg?raw=1" alt="" />
 
-                        <img src="https://www.dropbox.com/s/hqlfizn8yc5xaa0/beer-taps.jpg?raw=1" alt="" />
-
-                        <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt="" />
-                        <img src={beerImage} alt="beer" />
-                        <br />
+                            <div class="flex-child">
+                                <img src="https://www.dropbox.com/s/z59bms55wbkfdo7/barrels.jpg?raw=1" alt="" />
+                            </div>
+                            
+                            <div class="flex-child">
+                                <img src="https://www.dropbox.com/s/hqlfizn8yc5xaa0/beer-taps.jpg?raw=1" alt="" />
+                            </div>
+                            <div class="flex-child">
+                            <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt="" />
+                            </div>
+                            
+                            <img src={beerImage} alt="beer" />
+                            <br />
+                        </div>
                     </div>
 
 

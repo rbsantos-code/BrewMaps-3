@@ -29,6 +29,20 @@ html,
 body {
   height: 100%;
 }
+
+.flex-parent {
+  display: flex;
+  max-width:1800px;
+   padding:10px 5px;
+  /* .flex-child {
+    padding:20px;
+    margin:0 5px;
+    width:25%;
+    
+  } */
+}
+
+
 .cards-wrapper {
   position: relative;
   height: 100%;
