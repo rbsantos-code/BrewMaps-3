@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentList from '../CommentList';
+import Cheers from '../../public/images/cheers.png';
+
 
 const PostList = ({ posts }) => {
     if (!posts.length) {
@@ -15,7 +17,7 @@ const PostList = ({ posts }) => {
                 <article className="media">
                     <figure class="media-left">
                         <p class="image is-64x64">
-                            <img src="https://bulma.io/images/placeholders/128x128.png"></img>
+                            <img src={Cheers}></img>
                         </p>
                     </figure>
                     <div class="media-content">

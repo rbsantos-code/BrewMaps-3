@@ -4,6 +4,7 @@ import CommentForm from '../CommentForm';
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_POST } from '../../utils/queries';
+import Beericon from '../../public/images/circleBeericon.png';
 
 
 const CommentList = ({ comments }) => {
@@ -27,7 +28,7 @@ const CommentList = ({ comments }) => {
                     <article className="media" key={comment._id}>
                         <figure className="media-left">
                             <p className="image is-48x48">
-                                <img src="https://bulma.io/images/placeholders/128x128.png"></img>
+                                <img src={Beericon}></img>
                             </p>
                         </figure>
                         <div className="media-content">

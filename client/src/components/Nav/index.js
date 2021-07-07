@@ -1,6 +1,7 @@
 import React from 'react';
 import cheers from '../../public/images/cheers.png';
 import Auth from '../../utils/auth';
+import { Link } from "react-router-dom";
 
 export default function Nav() {
 
@@ -10,12 +11,12 @@ export default function Nav() {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <a className="button is-primary" href="./SignUp">
+                            <Link className="button is-primary" to="/signup">
                                 <strong>Sign up</strong>
-                            </a>
-                            <a className="button is-light" href="/" onClick={() => Auth.logout()}>
+                            </Link>
+                            <Link className="button is-light" to="/" onClick={() => Auth.logout()}>
                                 Logout
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -25,12 +26,12 @@ export default function Nav() {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <a className="button is-primary" href="./SignUp">
+                            <Link className="button is-primary" to="/signup">
                                 <strong>Sign up</strong>
-                            </a>
-                            <a className="button is-light" href="./Login">
+                            </Link>
+                            <Link className="button is-light" to="/login">
                                 Log in
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -40,43 +41,43 @@ export default function Nav() {
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-                <a className="navbar-item" href="/">BrewMap
-                    <img src={cheers} width="28" height="28"></img>
-                </a>
+                <Link className="navbar-item" to="/">BrewMap
+                    <img alt="cheers" src={cheers} width="28" height="28"></img>
+                </Link>
 
-                <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <Link role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
-                </a>
+                </Link>
             </div>            
 
             <div id="navbarBasicExample" className="navbar-menu">
                 <div className="navbar-start">
-                    <a className="navbar-item" href="/">
+                    <Link className="navbar-item" to="/">
                         Home
-                    </a>
+                    </Link>
 
-                    <a className="navbar-item" href="/Social">
+                    <Link className="navbar-item" to="/social">
                         Blog
-                    </a>
+                    </Link>
 
-                    <a className="navbar-item" href="/User">
+                    <Link className="navbar-item" to="/user">
                         User Profile
-                    </a>
+                    </Link>
 
                     <div className="navbar-item has-dropdown is-hoverable">
-                        <a className="navbar-link">
+                        <Link className="navbar-link">
                             More
-                        </a>
+                        </Link>
 
                         <div className="navbar-dropdown">
-                            <a className="navbar-item" href="./about">
+                            <Link className="navbar-item" to="/about">
                                 About
-                            </a>
-                            <a className="navbar-item" href="./Contact">
+                            </Link>
+                            <Link className="navbar-item" to="/contact">
                                 Contact
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
