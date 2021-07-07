@@ -43,6 +43,7 @@ function Login(props) {
           <div class="columns is-centered">
             <div class="column is-5-tablet is-4-desktop is-3-widescreen">
               <form action="" class="box" onSubmit={handleFormSubmit}>
+                <h1 class="text-center is-size-3 has-text-centered has-text-weight-bold">Sign In!</h1>
                 <div class="field">
                   <label for="" class="label">
                     Username

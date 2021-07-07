@@ -40,11 +40,11 @@ export default function SignUp(props) {
           <div class="columns is-centered">
             <div class="column is-5-tablet is-4-desktop is-3-widescreen">
               <div class="field bg-dark text-light p-3">
-                <h3 class="text-center is-size-3 has-text-centered">
-                  Join the Brew Crew!
-                </h3>
                 <form class="box" onSubmit={handleFormSubmit}>
                   <div className="field">
+                    <h3 class="text-center is-size-4 has-text-centered has-text-weight-bold">
+                    Join the Brew Crew!
+                    </h3>
                     <label for="username-signup">Username:</label>
                     <br />
                     <input
