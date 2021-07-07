@@ -54,5 +54,10 @@ input[type="radio"] {
   cursor: pointer;
   transition: color 200ms;
 }
-
-
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: pink;
+}
