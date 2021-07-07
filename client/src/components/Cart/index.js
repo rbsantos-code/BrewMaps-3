@@ -36,7 +36,7 @@ const Cart = () => {
                   Checkout
                 </button>
                 :
-                <span>(log in to check out)</span>
+                <span>(log in to save your breweries)</span>
             } */}
           </div>
         </div>

@@ -7,6 +7,7 @@ import BrewFont from "../../public/images/brewFont.png";
 import { ADD_BREWERY } from "../../utils/mutations";
 import StarButton from "../StarButton";
 import Cart from "../Cart";
+import Auth from '../../utils/auth';
 
 export default function Home() {
   const [activeModal, SetActiveModal] = useState(false);
@@ -128,7 +129,15 @@ export default function Home() {
                         longitude: brew.longitude
                       }
                     })}>
-                      - {brew.name}<StarButton favorite={brew} onClick={() => {saveHandler(brew.id)}} />
+                      - {brew.name}
+                      <br />
+                      {
+                        Auth.loggedIn() ?
+                        <StarButton favorite={brew} onClick={() => {saveHandler(brew.id)}} />
+                        :
+                        <button className="button is-small is-danger is-light">login to favorite</button>
+                      }
+                      
                     </li>)}
                   </div>
                   </ul>
