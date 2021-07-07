@@ -39,26 +39,23 @@ const typeDefs = gql`
   }
 
   type Brewery {
-    _id: ID
-    name: String!
-    address: Address
-    location: Location
-    phone: String
-    website: String
-    createdAt: String
+    id: ID
   }
 
   type Auth {
     token: ID!
     user: User
   }
-
+type Apikey {
+  value: String
+}
   type Query {
     me: User
     users: [User]
     user(username: String!): User
     posts(username: String): [Post]
     post(_id: ID!): Post
+    env: Apikey
   }
 
   type Mutation {
@@ -70,7 +67,7 @@ const typeDefs = gql`
 
     addComment(postId: ID!, commentBody: String!): Post
 
-    addBrewery(_id: ID!): Brewery
+    addBrewery(id: ID!): Brewery
 
     addFriend(friendId: ID!): User
   }

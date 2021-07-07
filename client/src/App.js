@@ -54,18 +54,21 @@ function App() {
           {/* All components between <StoreProvider> are children */}
           <StoreProvider>
             <Nav />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={aboutpage} />
-              <Route exact path="/nav" component={Nav} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/social" component={Social} />
-              <Route exact path="/signup" component={SignUp} />
-              <Route exact path="/user" component={User} />
-              <Route exact path="/contact" component={Contact} />
-              <Route exact path="/post/:id" component={SinglePost} />
-              <Route component={NoMatch} />
-            </Switch>
+            <div>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={aboutpage} />
+                <Route exact path="/nav" component={Nav} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/social" component={Social} />
+                <Route exact path="/signup" component={SignUp} />
+                <Route exact path="/user" component={User} />
+                <Route exact path="/contact" component={Contact} />
+                <Route exact path="/post/:id" component={SinglePost} />
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
+            {/* <Footer /> */}
           </StoreProvider>
         </div>
       </Router>

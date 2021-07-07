@@ -31,7 +31,7 @@
 #modalBox {
   position: absolute;
   top: 15%;
-  left: 20%;
+  left: 23%;
 }
 
 
@@ -43,3 +43,16 @@
     transform: rotate(360deg);
   }
 }
+
+/* favorite star */
+
+input[type="radio"] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
+
+
