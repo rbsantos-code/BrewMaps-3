@@ -54,7 +54,7 @@ input[type="radio"] {
   cursor: pointer;
   transition: color 200ms;
 }
-footer {
+.footerBottom {
   position: fixed;
   bottom: 0;
   width: 100%;
