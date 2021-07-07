@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_FAVORITES } from "../../utils/actions";
+import { REMOVE_BREWERY } from '../../utils/mutations';
 
 const CartItem = ({ item }) => {
     const [state, dispatch] = useStoreContext();

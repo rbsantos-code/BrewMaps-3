@@ -8,6 +8,7 @@ import './style.css';
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   console.log(state);
+  
   function toggleFavorites() {
     dispatch({ type: TOGGLE_FAVORITES });
   };
