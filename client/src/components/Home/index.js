@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
-import axios from "axios";
+import { Link } from 'react-router-dom';
 import cheers from "../../public/images/cheers.png";
 import BingMapsReact from "bingmaps-react";
 import BrewFont from "../../public/images/brewFont.png";
@@ -131,7 +131,16 @@ export default function Home() {
                         longitude: brew.longitude
                       }
                     })}>
-                      - {brew.name}<StarButton favorite={brew} saveHandler ={saveHandler}/>
+                      - {brew.name}
+                      <br />
+                      {
+                        Auth.loggedIn() ?
+                        <StarButton favorite={brew} saveHandler= {saveHandler} />
+                        :
+                        <Link to='/login'>
+                          <button className="button is-small is-danger is-light">login to favorite</button>
+                        </Link>
+                      }
                     </li>)}
                   </div>
                   </ul>
