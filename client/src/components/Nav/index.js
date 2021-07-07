@@ -11,9 +11,9 @@ export default function Nav() {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <Link className="button is-primary" to="/signup">
+                            {/* <Link className="button is-primary" to="/signup">
                                 <strong>Sign up</strong>
-                            </Link>
+                            </Link> */}
                             <Link className="button is-light" to="/" onClick={() => Auth.logout()}>
                                 Logout
                             </Link>
