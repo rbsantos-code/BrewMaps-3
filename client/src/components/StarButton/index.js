@@ -1,24 +1,46 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { useStoreContext } from "../../utils/GlobalState";
+import { ADD_TO_FAVORITES } from "../../utils/actions";
 
-const StarButton = () => {
-  const [favorite, setFavorite] = useState(false);
+const StarButton = ({ favorite, onClick }) => {
+  console.log(favorite);
+  const { id } = favorite;
+  const [state, dispatch] = useStoreContext();
+  const { favorites } = state;
+
+  //   const [favorite, setFavorite] = useState(false);
   const [hover, setHover] = useState(false);
-  const favState = true;
+
+  //   find brewery with matching id
+  const breweryInCart = favorites.find((brewery) => brewery.id === id);
+
+  const addToFavorites = () => {
+    // only add brewery if not in favorites cart
+    if (!breweryInCart) {
+      dispatch({
+        type: ADD_TO_FAVORITES,
+        brewery: favorite,
+      });
+    }
+
+    //   onClick();
+  };
   return (
     <div>
       <label>
         <input
           type="radio"
           name="favorite"
-          value={favState}
-          onClick={() => setFavorite(favState)}
+          onClick={() => {
+            addToFavorites();
+          }}
         />
         <FaStar
           className="star"
-          color={(hover || favorite) ? "ffc107" : "e4e5e9"}
+          color={hover || breweryInCart ? "ffc107" : "e4e5e9"}
           size={20}
-          onMouseEnter={() => setHover(favState)}
+          onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         />
       </label>
