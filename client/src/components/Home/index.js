@@ -119,16 +119,16 @@ export default function Home() {
                   <img src={BrewFont} />
                   <hr />
                   <ul className="has-text-weight-bold is-family-monospace has-text-link">
-                  <div>
-                    {brewery.map(brew => <li onClick={clickHandler} data={JSON.stringify({
-                      center: {
-                        latitude: brew.latitude,
-                        longitude: brew.longitude
-                      }
-                    })}>
-                      - {brew.name}<StarButton data={brew.id} onClick={() => {saveHandler(brew.id)}} />
-                    </li>)}
-                  </div>
+                    <div>
+                      {brewery.map(brew => <li onClick={clickHandler} data={JSON.stringify({
+                        center: {
+                          latitude: brew.latitude,
+                          longitude: brew.longitude
+                        }
+                      })}>
+                        - {brew.name}<StarButton data={brew.id} onClick={() => {saveHandler(brew.id)}} />
+                      </li>)}
+                    </div>
                   </ul>
                 </div>
                 <div className="column auto">
@@ -144,7 +144,9 @@ export default function Home() {
                       center: { longitude: longitude, latitude: latitude },
                       mapTypeId: "canvasLight",
                     }}
-                    pushPinsWithInfoboxes={pins}
+                    pushPinsWithInfoboxes={
+                      pins
+                    }
                   />
                 </div>
               </div>
