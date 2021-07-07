@@ -21,8 +21,8 @@ const CartItem = ({ item }) => {
     <div className="flex-row">
       <div>
       </div>
-      <div>
-        <div>
+      <div className="icon-text">
+        <div className="is-family-monospace">
             <a target="_blank" href={item.website_url}>{item.name}</a>
                 </div>
         <div>
