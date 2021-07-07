@@ -1,7 +1,11 @@
 import React from 'react';
 import cheers from '../../public/images/cheers.png';
+import { useStoreContext } from "../../utils/GlobalState";
 
 export default function Nav() {
+    const [state, dispatch] = useStoreContext();
+    console.log(state);
+
     return (
         <div className='columns'>
             <div className='container profile'>
@@ -77,6 +81,9 @@ export default function Nav() {
                         </div>
                     </div>
                 </div>
+                {state.favorites.map(favorite => (
+          <div key={favorite._id} item={favorite}>{favorite.name}</div>
+        ))}
             </div>
         </div>
     )

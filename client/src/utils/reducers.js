@@ -41,28 +41,28 @@ export const reducer = (state, action) => {
         // users immediately view cart with newly added item if not already open
         favoritesOpen: true,
         // add action.breweries to end of array
-        cart: [...state.cart, action.breweries],
+        favorites: [...state.favorites, action.brewery],
         // starButton: !state.buttonClicked
       };
 
     case REMOVE_FROM_FAVORITES:
       // only keep items that don't match _id of item removed
-      let newState = state.cart.filter((brewery) => {
-        return brewery._id !== action._id;
+      let newState = state.favorites.filter((brewery) => {
+        return brewery.id !== action.id;
       });
 
       return {
         ...state,
         //   set favoritesOpen to false when array is empty
         favoritesOpen: newState.length > 0,
-        cart: newState,
+        favorites: newState,
       };
 
     case CLEAR_FAVORITES:
       return {
         ...state,
         favoritesOpen: false,
-        cart: [],
+        favorites: [],
       };
 
     case TOGGLE_FAVORITES:
