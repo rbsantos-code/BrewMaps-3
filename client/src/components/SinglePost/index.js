@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { QUERY_POST } from '../../utils/queries';
+import Bottle from '../../public/images/bottle.png';
 
 import CommentList from '../CommentList';
 import CommentForm from '../CommentForm';
@@ -29,7 +30,7 @@ const SinglePost = props => {
             <article className="media box has-background-link-light">
                 <figure class="media-left">
                     <p class="image is-64x64">
-                        <img src="https://bulma.io/images/placeholders/128x128.png"></img>
+                        <img src={Bottle}></img>
                     </p>
                 </figure>
                 <div class="media-content">

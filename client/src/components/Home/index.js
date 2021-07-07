@@ -44,7 +44,12 @@ export default function Home() {
         setlongitude(data[0].longitude);
         setlatitude(data[0].latitude);
       })
-      .then(() => toggleActive());
+      .then(() => toggleActive())
+      .catch((error) => {
+        console.log(error);
+        window.location.reload();
+        alert('Brewery info not available, try another search!');
+    })
   };
 
   const refreshPage = () => {
@@ -141,7 +146,9 @@ export default function Home() {
                       center: { longitude: longitude, latitude: latitude },
                       mapTypeId: "canvasLight",
                     }}
-                    pushPinsWithInfoboxes={pins}
+                    pushPinsWithInfoboxes={
+                      pins
+                    }
                   />
                 </div>
               </div>
