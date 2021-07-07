@@ -22,8 +22,6 @@ const StoreProvider = ({ value = [], ...props }) => {
     breweries: [],
     favorites: [],
     favoritesOpen: false,
-    categories: [],
-    currentCategory: "",
   });
   console.log(state);
   //   return StoreContext's <Provider>

@@ -6,6 +6,7 @@ import BingMapsReact from "bingmaps-react";
 import BrewFont from "../../public/images/brewFont.png";
 import { ADD_BREWERY } from "../../utils/mutations";
 import StarButton from "../StarButton";
+import Cart from "../Cart";
 
 export default function Home() {
   const [activeModal, SetActiveModal] = useState(false);
@@ -61,6 +62,7 @@ export default function Home() {
     <>
       <div className="hero-body">
         <div className="container has-text-centered">
+        <Cart />
           <div className="column is-full is-centered">
             <img
               src={cheers}
@@ -121,7 +123,7 @@ export default function Home() {
                         longitude: brew.longitude
                       }
                     })}>
-                      - {brew.name}<StarButton data={brew.id} onClick={() => {saveHandler(brew.id)}} />
+                      - {brew.name}<StarButton favorite={brew} onClick={() => {saveHandler(brew.id)}} />
                     </li>)}
                   </div>
                   </ul>
