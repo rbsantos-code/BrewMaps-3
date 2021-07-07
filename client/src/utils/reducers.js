@@ -36,20 +36,24 @@ export const reducer = (state, action) => {
       };
 
     case ADD_TO_FAVORITES:
+      console.log("ADDING STATE", state);
+      console.log("ACTIONNN", action);
       return {
         ...state,
         // users immediately view cart with newly added item if not already open
         favoritesOpen: true,
         // add action.breweries to end of array
         favorites: [...state.favorites, action.brewery],
-        // starButton: !state.buttonClicked
       };
 
     case REMOVE_FROM_FAVORITES:
+      console.log("REMOVING STATE", state);
+      console.log("ACTIONNN", action);
       // only keep items that don't match _id of item removed
       let newState = state.favorites.filter((brewery) => {
-        return brewery.id !== action.id;
+        return brewery.id !== action.brewery.id;
       });
+      console.log("NEW STATEEEE", newState);
 
       return {
         ...state,
