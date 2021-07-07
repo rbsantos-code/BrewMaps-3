@@ -141,6 +141,23 @@ const resolvers = {
   
         throw new AuthenticationError("You need to be logged in!");
       },
+      removeBrewery: async (parent, args, context) => {
+        if (context.user) {
+          const brewery = await Brewery.findOneAndDelete({
+            ...args,
+          });
+          console.log(brewery)
+          await User.findByIdAndUpdate(
+            {_id: context.user._id },
+            { $pull: { favorites: brewery } },
+            { new: true}
+          )
+          
+          return brewery;
+        }
+
+        throw new AuthenticationError("You need to be logged in!");
+      }
   },
 };
 
