@@ -21,7 +21,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="cart">
+    <div className="cart has-background-white">
       <div className="close" onClick={toggleFavorites}>[close]</div>
       <h2>Your Favorites</h2>
       {state.favorites.length ? (
@@ -43,8 +43,8 @@ const Cart = () => {
         ) : (
           <h3>
           <span role="img" aria-label="shocked">
-          👀
-          </span>
+          👀 
+          </span> 
           You don't have any favorites yet!
         </h3>
         )}
