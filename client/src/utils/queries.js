@@ -62,7 +62,7 @@ export const QUERY_USER = gql`
         commentCount
       }
       favorites {
-        _id
+        id
         name
         address {
           street

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { Link } from 'react-router-dom';
 import cheers from "../../public/images/cheers.png";
 import BingMapsReact from "bingmaps-react";
@@ -8,10 +8,6 @@ import { ADD_BREWERY } from "../../utils/mutations";
 import StarButton from "../StarButton";
 import Cart from "../Cart";
 import Auth from '../../utils/auth';
-import { idbPromise } from "../../utils/helpers";
-import { QUERY_USER } from "../../utils/queries";
-import { UPDATE_BREWERIES } from "../../utils/actions";
-import { useStoreContext } from "../../utils/GlobalState";
 
 export default function Home() {
   const [activeModal, SetActiveModal] = useState(false);
@@ -31,40 +27,6 @@ export default function Home() {
   const toggleActive = () => {
     SetActiveModal(!activeModal);
   };
-
-  const [state, dispatch] = useStoreContext();
-
-  const { favorites } = state;
-
-  const { loading, data } = useQuery(QUERY_USER);
-console.log(data);
-  useEffect(() => {
-    // if there's data to be stored
-    if (data) {
-      // let's store it in the global state object
-      dispatch({
-        type: UPDATE_BREWERIES,
-        favorites: data.breweries
-      });
-  
-      // but let's also take each product and save it to IndexedDB using the helper function 
-      data.products.forEach((brewery) => {
-        idbPromise('favorites', 'put', brewery);
-      });
-    }
-    //   // add else if to check if `loading` is undefined in `useQuery()` Hook
-    // } else if (!loading) {
-    //   // since we're offline, get all data form "products" store
-    //   idbPromise("breweries", "get").then((breweries) => {
-    //     // use retrieved array product data to set global state for offline browsing
-    //     dispatch({
-    //       type: UPDATE_BREWERIES,
-    //       breweries: breweries
-    //     });
-    //   });
-    // }
-
-  }, [data, loading, dispatch]);
 
   const clickHandler = (event) => {
     const mapData = event.target.getAttribute("data");

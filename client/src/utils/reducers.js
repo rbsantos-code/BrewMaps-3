@@ -16,7 +16,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         // new array with action.products value spread across it
-        breweries: [...action.breweries],
+        breweries: [...action.favorites],
       };
     //   if action type value is "UPDATE_CATEGORIES"
     // return a new state obj with updated categories array
