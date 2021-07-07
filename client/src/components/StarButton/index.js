@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_TO_FAVORITES } from "../../utils/actions";
+import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "../../utils/actions";
 
-const StarButton = ({ favorite, onClick }) => {
-  console.log(favorite);
+const StarButton = ({ favorite, saveHandler }) => {
+//   console.log(favorite);
   const { id } = favorite;
   const [state, dispatch] = useStoreContext();
   const { favorites } = state;
@@ -16,24 +16,37 @@ const StarButton = ({ favorite, onClick }) => {
   const breweryInCart = favorites.find((brewery) => brewery.id === id);
 
   const addToFavorites = () => {
-    // only add brewery if not in favorites cart
-    if (!breweryInCart) {
       dispatch({
         type: ADD_TO_FAVORITES,
         brewery: favorite,
       });
-    }
-
-    //   onClick();
   };
+
+  const removeFromFavorites = () => {
+    dispatch({
+        type: REMOVE_FROM_FAVORITES,
+        brewery: favorite,
+    })
+  }
+
+  const buttonClicked = () => {
+    if (!breweryInCart) {
+        addToFavorites();
+    } else {
+        removeFromFavorites();
+    }
+  }
+
   return (
     <div>
       <label>
         <input
           type="radio"
           name="favorite"
-          onClick={() => {
-            addToFavorites();
+          value={favorite.id}
+          onClick={(e) => {
+            buttonClicked();
+            saveHandler(e);
           }}
         />
         <FaStar
