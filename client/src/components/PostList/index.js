@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CommentList from '../CommentList';
 import Cheers from '../../public/images/cheers.png';
 
+
 const PostList = ({ posts }) => {
     if (!posts.length) {
         return <h2>No post yet! Be the first to do so!</h2>
