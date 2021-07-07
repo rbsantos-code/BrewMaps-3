@@ -3,8 +3,8 @@ import { FaStar } from "react-icons/fa";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "../../utils/actions";
 
-const StarButton = ({ favorite, onClick }) => {
-  console.log(favorite);
+const StarButton = ({ favorite, saveHandler }) => {
+//   console.log(favorite);
   const { id } = favorite;
   const [state, dispatch] = useStoreContext();
   const { favorites } = state;
@@ -43,8 +43,10 @@ const StarButton = ({ favorite, onClick }) => {
         <input
           type="radio"
           name="favorite"
-          onClick={() => {
-            buttonClicked()
+          value={favorite.id}
+          onClick={(e) => {
+            buttonClicked();
+            saveHandler(e);
           }}
         />
         <FaStar

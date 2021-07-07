@@ -108,6 +108,7 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     addBrewery: async (parent, args, context) => {
+      console.log("RESOLVER HIT");
         if (context.user) {
             const brewery = await Brewery.create({
               ...args,

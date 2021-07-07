@@ -52,8 +52,10 @@ export default function Home() {
   };
 
   const saveHandler = async (e) => {
-    const id = e.target.getAttribute("data");
-    const { data } = await addBrewery({ id: id });
+    console.log(e.target);
+    const id = e.target.value;
+    console.log(id);
+    const { data } = await addBrewery({variables: { id: id }});
     console.log(data);
     console.log(id);
   };
@@ -123,7 +125,7 @@ export default function Home() {
                         longitude: brew.longitude
                       }
                     })}>
-                      - {brew.name}<StarButton favorite={brew} onClick={() => {saveHandler(brew.id)}} />
+                      - {brew.name}<StarButton favorite={brew} saveHandler ={saveHandler}/>
                     </li>)}
                   </div>
                   </ul>
