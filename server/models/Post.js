@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormat');
+const datetime = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
 
 const postSchema = new Schema(
     {
