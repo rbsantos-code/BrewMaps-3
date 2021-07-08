@@ -37,7 +37,7 @@ export const reducer = (state, action) => {
       console.log("ACTIONNN", action);
       // only keep items that don't match _id of item removed
       let newState = state.favorites.filter((brewery) => {
-        return brewery.id !== action.brewery.id;
+        return brewery.id !== action.id;
       });
       console.log("NEW STATEEEE", newState);
 

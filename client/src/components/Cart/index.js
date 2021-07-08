@@ -9,9 +9,12 @@ import { QUERY_USER } from "../../utils/queries";
 import { UPDATE_BREWERIES } from "../../utils/actions";
 import { useQuery } from "@apollo/client";
 
+import FavFont from '../../public/images/favoritesFont.png'
+
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   console.log(state);
+  
   function toggleFavorites() {
     dispatch({ type: TOGGLE_FAVORITES });
   }
@@ -66,10 +69,8 @@ const Cart = () => {
 
   return (
     <div className="cart has-background-white">
-      <div className="close" onClick={toggleFavorites}>
-        [close]
-      </div>
-      <h2>Your Favorites</h2>
+      <div className="close" onClick={toggleFavorites}>[close]</div>
+      <img className="favFont" src={FavFont}></img>
       {state.favorites.length ? (
         <div>
           {state.favorites.map((favorite) => (
