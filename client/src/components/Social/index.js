@@ -5,7 +5,7 @@ import { QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
 import cheers from '../../public/images/cheers.png';
 import PostList from '../PostList';
 import PostForm from '../PostForm';
-
+import PostDrink from '../../public/images/postDrink.png';
 import Auth from '../../utils/auth';
 
 export default function Social() {
@@ -16,6 +16,14 @@ export default function Social() {
     console.log(posts);
 
     const loggedIn = Auth.loggedIn();
+
+    function scrollDown() {
+        window.scroll({
+            top: document.body.scrollHeight,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }
 
     return (
         <div class="hero-body">
@@ -28,7 +36,12 @@ export default function Social() {
                     <h2 class="subtitle text-light">
                     Sharing about brews with your crew.
                     </h2>
+                    <hr />
+                    <img src={PostDrink}></img>
+                    <hr />
                 </div>
+                <button className="button is-fullwidth is-primary is-light" onClick={scrollDown}>Click to Post</button>
+                <br />
             </div>
             <article class="column">
                 {loading ? (
