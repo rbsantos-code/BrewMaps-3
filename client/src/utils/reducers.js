@@ -1,7 +1,5 @@
 import {
   UPDATE_BREWERIES,
-  UPDATE_CATEGORIES,
-  UPDATE_CURRENT_CATEGORY,
   ADD_TO_FAVORITES,
   REMOVE_FROM_FAVORITES,
   CLEAR_FAVORITES,
@@ -18,22 +16,10 @@ export const reducer = (state, action) => {
       return {
         ...state,
         // new array with action.products value spread across it
-        breweries: [...action.breweries],
+        breweries: [...action.favorites],
       };
     //   if action type value is "UPDATE_CATEGORIES"
     // return a new state obj with updated categories array
-    case UPDATE_CATEGORIES:
-      return {
-        ...state,
-        categories: [...action.categories],
-      };
-
-    case UPDATE_CURRENT_CATEGORY:
-      return {
-        ...state,
-        // update to new string value
-        currentCategory: action.currentCategory,
-      };
 
     case ADD_TO_FAVORITES:
       console.log("ADDING STATE", state);
