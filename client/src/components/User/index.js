@@ -1,10 +1,38 @@
 import React from 'react';
+import { Redirect, useParams } from 'react-router';
+import { useQuery } from '@apollo/client';
+import { QUERY_USER, QUERY_ME } from '../../utils/queries';
+
+import Auth from '../../utils/auth';
+import flights from '../../public/images/catchFlights.png'
 import cheers from '../../public/images/cheers.png';
 import { useStoreContext } from "../../utils/GlobalState";
 
 export default function Nav() {
     const [state, dispatch] = useStoreContext();
     console.log(state);
+
+    const { username: userParam } = useParams();
+
+    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+        variables: { username: userParam }
+    })
+
+    const user = data?.me || data?.user || {};
+
+    if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+        return <Redirect to='/user'/>;
+    }
+
+    if (loading) {
+        return <div>Something is brewing...</div>
+    }
+
+    if (!user.username) {
+        return (
+            <h4>Please login or Sign up to see this page!</h4>
+        );
+    }
 
     return (
         <div className='columns'>
@@ -18,11 +46,13 @@ export default function Nav() {
                             </div>
                         <div className='column is-4-tablet is-10-mobile name'>
                             <p>
-                                <span className='title is-bold'>USERNAME</span>
+                                <span className='title is-bold'>{user.username}</span>
+                                <hr />
                                 <a className='button is-primary is-outlined' href='#' id='edit-preferences'>
                                     Edit Preferences
                                 </a>   
                             </p>
+                            <br />
                             <p className='tagline'>
                                 The users profile bio (need to make box that can be edited)
                             </p>
@@ -41,8 +71,8 @@ export default function Nav() {
                         </div>
                     </div>
                 </div>
-                <div className='profile-options is-fullwidth'>
-                    <div className='tabs is-fullwidth is-medium'>
+                <div className='hero is-link  is-small profile-options is-fullwidth'>
+                    <div className='tabs is-fullwidth is-medium hero-body'>
                         <ul>
                             <li className='link is-active'>
                             <a>
@@ -74,16 +104,24 @@ export default function Nav() {
                         <div className='column is-8'>
                             <p className='control has-addons'>
                                 <input className='input' placeholder='Search your favorited breweries' type='text'></input>
-                            <button className='button'>
+                                <br />
+                                <br />
+                                <button className='button is-link is-fullwidth'>
                                 Search
-                            </button>
+                                </button>
+                                <br />
+                                {state.favorites.map(favorite => (
+                     <li className="has-text-centered has-text-weight-bold" key={favorite._id} item={favorite}>{favorite.name}</li>
+                ))}
                             </p>
                         </div>
                     </div>
                 </div>
-                {state.favorites.map(favorite => (
-          <div key={favorite._id} item={favorite}>{favorite.name}</div>
-        ))}
+                <hr />
+                <div >
+                    <img src={flights}></img>
+                    <h3 className="has-text-centered has-text-weight-bold">(Beer flights of course!)</h3>
+                </div>
             </div>
         </div>
     )

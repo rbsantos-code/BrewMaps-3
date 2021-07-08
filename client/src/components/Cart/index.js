@@ -5,9 +5,12 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_FAVORITES } from "../../utils/actions";
 import './style.css';
 
+import FavFont from '../../public/images/favoritesFont.png'
+
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   console.log(state);
+  
   function toggleFavorites() {
     dispatch({ type: TOGGLE_FAVORITES });
   };
@@ -23,7 +26,7 @@ const Cart = () => {
   return (
     <div className="cart has-background-white">
       <div className="close" onClick={toggleFavorites}>[close]</div>
-      <h2>Your Favorites</h2>
+      <img className="favFont" src={FavFont}></img>
       {state.favorites.length ? (
       <div>
         {state.favorites.map(favorite => (
