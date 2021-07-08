@@ -37,8 +37,6 @@ export default function Social() {
                     Sharing about brews with your crew.
                     </h2>
                     <hr />
-                    <img src={PostDrink}></img>
-                    <hr />
                 </div>
                 <button className="button is-fullwidth is-primary is-light" onClick={scrollDown}>Click to Post</button>
                 <br />
@@ -50,6 +48,8 @@ export default function Social() {
                     <PostList posts={posts}/>
                 )}
             </article>
+            <hr />
+            <img src={PostDrink}></img>
             <hr />
             <div>
                 {loggedIn && (
