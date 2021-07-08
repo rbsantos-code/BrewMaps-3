@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
-
+import flights from '../../public/images/catchFlights.png'
 import cheers from '../../public/images/cheers.png';
 import { useStoreContext } from "../../utils/GlobalState";
 
@@ -104,17 +104,24 @@ export default function Nav() {
                         <div className='column is-8'>
                             <p className='control has-addons'>
                                 <input className='input' placeholder='Search your favorited breweries' type='text'></input>
-                            <button className='button'>
+                                <br />
+                                <br />
+                                <button className='button is-link is-fullwidth'>
                                 Search
-                            </button>
+                                </button>
+                                <br />
+                                {state.favorites.map(favorite => (
+                     <li className="has-text-centered has-text-weight-bold" key={favorite._id} item={favorite}>{favorite.name}</li>
+                ))}
                             </p>
                         </div>
                     </div>
                 </div>
                 <hr />
-                {state.favorites.map(favorite => (
-          <div key={favorite._id} item={favorite}>{favorite.name}</div>
-        ))}
+                <div >
+                    <img src={flights}></img>
+                    <h3 className="has-text-centered has-text-weight-bold">(Beer flights of course!)</h3>
+                </div>
             </div>
         </div>
     )
