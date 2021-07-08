@@ -42,3 +42,6 @@ db.once('open', () => {
         console.log(`USE GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
 });
+
+
+// checking to launch to heroku
