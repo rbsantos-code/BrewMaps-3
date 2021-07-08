@@ -8,7 +8,7 @@ const profiles = [
         "name": "Ian",
         "subtitle": "Resident Expert Coder",
         "description": "Ian likes golf, SF sports, and pastrami sandwiches. He is an expert coder.   ",
-        "github": "https://riosborne6.github.io/Portfolio/",
+        "github": "https://nameless-plateau-89658.herokuapp.com/",
         "email": "mailto:riosborne6@gmail.com",
         "image": "../../public/images/Ian.png",
         "id": "card-1 card-object card-object-hf"
