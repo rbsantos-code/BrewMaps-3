@@ -75,7 +75,7 @@ export const ADD_BREWERY = gql`
 
 export const REMOVE_BREWERY = gql`
   mutation removeBrewery($id: ID!) {
-    removeBrewery(id: $ID) {
+    removeBrewery(id: $id) {
       id
     }
   }

@@ -88,14 +88,8 @@ export const QUERY_ME = gql`
     me {
       _id
       username
-      posts {
-        body
-        createdAt
-        comments {
-          commentBody
-          username
-          createdAt
-        }
+      favorites {
+        id
       }
     }
   }

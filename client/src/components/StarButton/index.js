@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "../../utils/actions";
 
-const StarButton = ({ favorite, saveHandler }) => {
+const StarButton = ({ favorite, saveHandler, removeHandler }) => {
 //   console.log(favorite);
   const { id } = favorite;
   const [state, dispatch] = useStoreContext();
@@ -25,15 +25,18 @@ const StarButton = ({ favorite, saveHandler }) => {
   const removeFromFavorites = () => {
     dispatch({
         type: REMOVE_FROM_FAVORITES,
-        brewery: favorite,
-    })
+        id: favorite.id,
+    });
   }
 
-  const buttonClicked = () => {
+  const buttonClicked = (e) => {
     if (!breweryInCart) {
         addToFavorites();
+        saveHandler(e);
     } else {
+      console.log("trying to remove");
         removeFromFavorites();
+        removeHandler(e);
     }
   }
 
@@ -45,8 +48,7 @@ const StarButton = ({ favorite, saveHandler }) => {
           name="favorite"
           value={favorite.id}
           onClick={(e) => {
-            buttonClicked();
-            saveHandler(e);
+            buttonClicked(e);
           }}
         />
         <FaStar

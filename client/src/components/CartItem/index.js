@@ -3,18 +3,17 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_FAVORITES } from "../../utils/actions";
 import { REMOVE_BREWERY } from '../../utils/mutations';
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, removeHandler }) => {
     const [state, dispatch] = useStoreContext();
 
-    const removeFromFavorites = () => {
+    const removeFromFavorites = (e) => {
         // only add brewery if not in favorites cart
           dispatch({
             type: REMOVE_FROM_FAVORITES,
             id: item.id,
           });
 
-    
-        //   onClick();
+          removeHandler(e);
       };
 
   return (
@@ -26,7 +25,9 @@ const CartItem = ({ item }) => {
             <a target="_blank" href={item.website_url}>{item.name}</a>
                 </div>
         <div>
-          <span onClick={removeFromFavorites}
+          <span onClick={(e) => {
+            removeFromFavorites(e);
+          }}
             role="img"
             aria-label="trash"
           >
