@@ -26,16 +26,14 @@ export default function Nav() {
   useEffect(() => {
     console.log("USE EFFECT RUNNING");
     if (user.favorites) {
-        const array = [];
-      user.favorites.forEach((favorite) => {
-        fetch(`https://api.openbrewerydb.org/breweries/${favorite.id}`)
-          .then((res) => res.json())
-          .then((data) => array.push(data));
-      });
-      if (user.favorites.length === array.length) {
-        setBrewery(array);
-        console.log(array);
-      }
+// making multiple calls inside any loop would return 'pending' to make it so that everything is ready before being set, we need to utlilize promises 
+      Promise.all(
+        user.favorites.map((favorite) =>
+          fetch(`https://api.openbrewerydb.org/breweries/${favorite.id}`)
+            .then((res) => res.json())
+            .then((data) => data)
+        )
+      ).then((array) => setBrewery(array))
     }
   }, [user]);
 
@@ -136,7 +134,7 @@ export default function Nav() {
                 {brewery.map((favorite) => (
                   <li
                     className="has-text-centered has-text-weight-bold"
-                      key={favorite.id}
+                    key={favorite.id}
                   >
                     {favorite.name}
                   </li>
