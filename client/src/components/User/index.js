@@ -26,14 +26,14 @@ export default function Nav() {
   useEffect(() => {
     console.log("USE EFFECT RUNNING");
     if (user.favorites) {
-// making multiple calls inside any loop would return 'pending' to make it so that everything is ready before being set, we need to utlilize promises 
+      // making multiple calls inside any loop would return 'pending' to make it so that everything is ready before being set, we need to utlilize promises
       Promise.all(
         user.favorites.map((favorite) =>
           fetch(`https://api.openbrewerydb.org/breweries/${favorite.id}`)
             .then((res) => res.json())
             .then((data) => data)
         )
-      ).then((array) => setBrewery(array))
+      ).then((array) => setBrewery(array));
     }
   }, [user]);
 
@@ -136,7 +136,19 @@ export default function Nav() {
                     className="has-text-centered has-text-weight-bold"
                     key={favorite.id}
                   >
+                    <br />
                     {favorite.name}
+                    <br />
+                    Address: {favorite.street}
+                    <br />
+                     {favorite.city}, {favorite.state}{" "}
+                    {favorite.postal_code}
+                    <br />
+                    Phone: {favorite.phone}
+                    <br />
+                    Type: {favorite.brewery_type}
+                    <br />
+                    <a target="_blank" href={favorite.website_url}>{favorite.website_url}</a>
                   </li>
                 ))}
               </p>
