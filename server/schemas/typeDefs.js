@@ -69,9 +69,9 @@ type Apikey {
 
     addBrewery(id: ID!): Brewery
 
-    addFriend(friendId: ID!): User
-
     removeBrewery(id: ID!): Brewery
+
+    addFriend(friendId: ID!): User
   }
 `;
 
