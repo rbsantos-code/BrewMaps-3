@@ -125,6 +125,7 @@ const resolvers = {
     
           throw new AuthenticationError("You need to be logged in!");
     },
+    // for future implementation
     addFriend: async (parent, { friendId }, context) => {
         if (context.user) {
           const updatedUser = await User.findOneAndUpdate(

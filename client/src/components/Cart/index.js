@@ -11,7 +11,7 @@ import { useQuery } from "@apollo/client";
 
 import FavFont from '../../public/images/favoritesFont.png'
 
-const Cart = () => {
+const Cart = ({removeHandler}) => {
   const [state, dispatch] = useStoreContext();
   console.log(state);
   
@@ -51,12 +51,6 @@ const Cart = () => {
     }
   }, [data, loading, dispatch]);
 
-  function saveFavorite() {
-    if (!currentFavorite) {
-      return state.favorites;
-    }
-  }
-
   if (!state.favoritesOpen) {
     return (
       <div className="cart-closed" onClick={toggleFavorites}>
@@ -74,7 +68,7 @@ const Cart = () => {
       {state.favorites.length ? (
         <div>
           {state.favorites.map((favorite) => (
-            <CartItem key={favorite.id} _id={favorite.id} item={favorite} />
+            <CartItem key={favorite.id} _id={favorite.id} item={favorite} removeHandler= {removeHandler} />
           ))}
           <div className="flex-row space-between">
             {/* {

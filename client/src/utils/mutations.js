@@ -24,6 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
+// for future Friending implementation
 export const ADD_FRIEND = gql`
   mutation addFriend($id: ID!) {
     addFriend(friendId: $id) {
@@ -75,7 +76,7 @@ export const ADD_BREWERY = gql`
 
 export const REMOVE_BREWERY = gql`
   mutation removeBrewery($id: ID!) {
-    removeBrewery(id: $ID) {
+    removeBrewery(id: $id) {
       id
     }
   }

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import cheers from "../../public/images/cheers.png";
 import BingMapsReact from "bingmaps-react";
 import BrewFont from "../../public/images/brewFont.png";
-import { ADD_BREWERY } from "../../utils/mutations";
+import { ADD_BREWERY, REMOVE_BREWERY } from "../../utils/mutations";
 import StarButton from "../StarButton";
 import Cart from "../Cart";
 import Auth from '../../utils/auth';
@@ -23,6 +23,7 @@ export default function Home() {
   const [latitude, setlatitude] = useState(0);
 
   const [addBrewery] = useMutation(ADD_BREWERY);
+  const [removeBrewery] = useMutation(REMOVE_BREWERY);
 
   const toggleActive = () => {
     SetActiveModal(!activeModal);
@@ -66,11 +67,20 @@ export default function Home() {
     console.log(id);
   };
 
+  const removeHandler = async (e) => {
+    console.log(e.target);
+    const id = e.target.value;
+    console.log(id);
+    const { data } = await removeBrewery({variables: { id: id }});
+    console.log(data);
+    console.log(id);
+  };
+
   return (
     <>
       <div className="hero-body">
         <div className="container has-text-centered">
-        <Cart />
+        <Cart removeHandler= {removeHandler} />
           <div className="column is-full is-centered">
             <img
               src={cheers}
@@ -135,7 +145,7 @@ export default function Home() {
                       <br />
                       {
                         Auth.loggedIn() ?
-                        <StarButton favorite={brew} saveHandler= {saveHandler} />
+                        <StarButton favorite={brew} saveHandler= {saveHandler} removeHandler= {removeHandler} />
                         :
                         <Link to='/login'>
                           <button className="button is-small is-danger is-light">login to favorite</button>

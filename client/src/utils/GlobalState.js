@@ -19,7 +19,6 @@ const StoreProvider = ({ value = [], ...props }) => {
   // and dispatch (fx to update our state)
   // dispatch looks for action obj passed in as arg
   const [state, dispatch] = useBreweryReducer({
-    breweries: [],
     favorites: [],
     favoritesOpen: false,
   });

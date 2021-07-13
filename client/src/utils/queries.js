@@ -50,11 +50,6 @@ export const QUERY_USER = gql`
     user(username: $username) {
       _id
       username
-      friendCount
-      friends {
-        _id
-        username
-      }
       posts {
         _id
         postText
@@ -63,21 +58,11 @@ export const QUERY_USER = gql`
       }
       favorites {
         id
-        name
-        address {
-          street
-          city
-          state
-          postalCode
-          country
-        }
-        location {
-          latitude
-          longitude
-        }
-        phone
-        website
-        createdAt
+      }
+      friendCount
+      friends {
+        _id
+        username
       }
     }
   }
@@ -88,14 +73,8 @@ export const QUERY_ME = gql`
     me {
       _id
       username
-      posts {
-        body
-        createdAt
-        comments {
-          commentBody
-          username
-          createdAt
-        }
+      favorites {
+        id
       }
     }
   }
